@@ -16,18 +16,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="Security,PKI,SSL/TLS,HTTPS,SSH," />
-    <meta name="description" content="PKI 应用： SSL/TLS 、 HTTPS 、 SSH 概述。">
+    <meta name="description" content="PKI应用：SSL/TLS、HTTPS、SSH概述。">
     <meta name="keywords" content="Security,PKI,SSL&#x2F;TLS,HTTPS,SSH">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Security SSL&#x2F;TLS 历史及概述">
     <meta property="og:url" content="https://knowte.velne.win/posts/pki/ssl-tls/ssl-tls-notes/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="PKI 应用： SSL/TLS 、 HTTPS 、 SSH 概述。">
+    <meta property="og:description" content="PKI应用：SSL/TLS、HTTPS、SSH概述。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-05-30T00:41:51.706Z">
+    <meta property="og:updated_time" content="2018-06-03T16:54:59.279Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Security SSL&#x2F;TLS 历史及概述">
-    <meta name="twitter:description" content="PKI 应用： SSL/TLS 、 HTTPS 、 SSH 概述。">
+    <meta name="twitter:description" content="PKI应用：SSL/TLS、HTTPS、SSH概述。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -201,27 +201,27 @@
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p><code>PKI</code> 应用： <code>SSL/TLS</code> 、 <code>HTTPS</code> 、 <code>SSH</code> 概述。</p>
+                                        <p><code>PKI</code>应用：<code>SSL/TLS</code>、<code>HTTPS</code>、<code>SSH</code>概述。</p>
                                         <a id="more"></a>
                                         <h1 id="SSL-TLS-历史"><a href="#SSL-TLS-历史" class="headerlink" title="SSL/TLS 历史"></a>SSL/TLS 历史</h1>
-                                        <p>1994年，<code>NetScape</code> 设计了 <code>SSL</code> 1.0，但未发布。<br>1995年，<code>NetScape</code> 发布了 <code>SSL</code> 2.0，很快发现有严重漏洞。<br>1996年，<code>SSL</code> 3.0 问世，得到大规模应用， 2015年发现漏洞 <code>POODLE</code>。</p>
-                                        <p>1999年，<code>ISOC</code> 定义发布 <code>SSL</code> 的升级版 <code>TLS</code> 1.0 <a href="http://ietf.org/rfc/rfc2246.txt" target="_blank" rel="noopener">RFC2246</a>。<br>2006年，<code>TLS</code> 1.1 <a href="http://ietf.org/rfc/rfc4346.txt" target="_blank" rel="noopener">RFC4346</a>。<br>2008年，<code>TLS</code> 1.2 <a href="http://ietf.org/rfc/rfc5246.txt" target="_blank" rel="noopener">RFC5246</a>。<br>2011年，禁止 <code>SSL</code> 2.0 <a href="http://ietf.org/rfc/rfc6176.txt" target="_blank" rel="noopener">RFC6176</a>。</p>
-                                        <p>2014年，<code>TLS</code> 1.3 开始筹备 <a href="https://tools.ietf.org/html/draft-ietf-tls-rfc5246-bis-00" target="_blank" rel="noopener">draft-ietf-tls-rfc5246-bis-00</a>。<br>2018年，<code>TLS</code> 1.3 第28草案 <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-28" target="_blank" rel="noopener">draft-ietf-tls-tls13-28</a>。</p>
+                                        <p>1994年，<code>NetScape</code>设计了<code>SSL</code>1.0，但未发布。<br>1995年，<code>NetScape</code>发布了<code>SSL</code>2.0，很快发现有严重漏洞。<br>1996年，<code>SSL</code>3.0 问世，得到大规模应用， 2015年发现漏洞<code>POODLE</code>。</p>
+                                        <p>1999年，<code>ISOC</code>定义发布<code>SSL</code>的升级版<code>TLS</code>1.0 <a href="http://ietf.org/rfc/rfc2246.txt" target="_blank" rel="noopener">RFC2246</a>。<br>2006年，<code>TLS</code>1.1 <a href="http://ietf.org/rfc/rfc4346.txt" target="_blank" rel="noopener">RFC4346</a>。<br>2008年，<code>TLS</code>1.2 <a href="http://ietf.org/rfc/rfc5246.txt" target="_blank" rel="noopener">RFC5246</a>。<br>2011年，禁止<code>SSL</code>2.0 <a href="http://ietf.org/rfc/rfc6176.txt" target="_blank" rel="noopener">RFC6176</a>。</p>
+                                        <p>2014年，<code>TLS</code>1.3 开始筹备 <a href="https://tools.ietf.org/html/draft-ietf-tls-rfc5246-bis-00" target="_blank" rel="noopener">draft-ietf-tls-rfc5246-bis-00</a>。<br>2018年，<code>TLS</code>1.3 第28草案 <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-28" target="_blank" rel="noopener">draft-ietf-tls-tls13-28</a>。</p>
                                         <h1 id="SSL-TLS-体系"><a href="#SSL-TLS-体系" class="headerlink" title="SSL/TLS 体系"></a>SSL/TLS 体系</h1>
                                         <h2 id="Secure-Socket-Layer"><a href="#Secure-Socket-Layer" class="headerlink" title="Secure Socket Layer"></a>Secure Socket Layer</h2>
-                                        <p><code>SSL</code> , 安全套接字层, 传输层之上，对 <code>Socket</code> 连接的加密协议。实现客户端和服务器之间的安全传输。</p>
+                                        <p><code>SSL</code>, 安全套接字层, 传输层之上，对<code>Socket</code>连接的加密协议。实现客户端和服务器之间的安全传输。</p>
                                         <h2 id="SSL-3-0-漏洞-POODLE"><a href="#SSL-3-0-漏洞-POODLE" class="headerlink" title="SSL 3.0 漏洞 POODLE"></a>SSL 3.0 漏洞 POODLE</h2>
-                                        <p>2014年10月15日， <code>Google</code> 发现一个关于 <code>SSLv3</code> 的高危漏洞， 命名为 <code>POODLE</code> ( Padding Oracle On Downgraded Legacy Encryption )。<br><a href="https://security.googleblog.com/2014/10/this-poodle-bites-exploiting-ssl-30.html" target="_blank" rel="noopener">POODLE</a>。</p>
+                                        <p>2014年10月15日，<code>Google</code>发现一个关于<code>SSLv3</code>的高危漏洞， 命名为<code>POODLE</code>( Padding Oracle On Downgraded Legacy Encryption )。<br><a href="https://security.googleblog.com/2014/10/this-poodle-bites-exploiting-ssl-30.html" target="_blank" rel="noopener">POODLE</a>。</p>
                                         <h2 id="Transport-Layer-Security"><a href="#Transport-Layer-Security" class="headerlink" title="Transport Layer Security"></a>Transport Layer Security</h2>
-                                        <p><code>TLS</code> ，传输层安全， 同样是传输层之上，用于任何两个应用程序之间的安全传输。<br><code>TLS</code> 是基于 <code>SSLv3</code> 的后续发展</p>
+                                        <p><code>TLS</code>，传输层安全， 同样是传输层之上，用于任何两个应用程序之间的安全传输。<br><code>TLS</code>是基于<code>SSLv3</code>的后续发展</p>
                                         <h2 id="OpenSSL"><a href="#OpenSSL" class="headerlink" title="OpenSSL"></a>OpenSSL</h2>
-                                        <p><code>OpenSSL</code> 是 <code>SSL/TLS</code> 的一种开源实现。</p>
+                                        <p><code>OpenSSL</code>是<code>SSL/TLS</code>的一种开源实现。</p>
                                         <h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2>
-                                        <p><code>HTTPS</code> ，应用层协议，是在传输层使用 <code>SSL/TLS</code> 加密的 <code>HTTP</code>， 通过 <code>443端口</code> 实现。</p>
+                                        <p><code>HTTPS</code>，应用层协议，是在传输层使用<code>SSL/TLS</code>加密的<code>HTTP</code>， 通过<code>443端口</code>实现。</p>
                                         <h2 id="Secure-Shell"><a href="#Secure-Shell" class="headerlink" title="Secure Shell"></a>Secure Shell</h2>
                                         <p><code>SSH</code>, 应用层通信加密协议，通常用于远程登录会话。</p>
                                         <h2 id="OpenSSH"><a href="#OpenSSH" class="headerlink" title="OpenSSH"></a>OpenSSH</h2>
-                                        <p><code>OpenSSH</code> 是 <code>SSH</code> 的一种开源实现。</p>
+                                        <p><code>OpenSSH</code>是<code>SSH</code>的一种开源实现。</p>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
@@ -233,13 +233,13 @@
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/shell/cmd/currentdir/" rel="next" title="CMD 获取路径命令">
-                <i class="fa fa-chevron-left"></i> CMD 获取路径命令
+                                                <a href="/posts/shell/bash/bashrc/" rel="next" title="Shell 一些Bash环境配置">
+                <i class="fa fa-chevron-left"></i> Shell 一些Bash环境配置
               </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/shell/cmd/dirchanger/" rel="prev" title="CMD 返回到原路径">
+                                                <a href="/posts/shell/cmd/cmdback/" rel="prev" title="CMD 返回到原路径">
                 CMD 返回到原路径 <i class="fa fa-chevron-right"></i>
               </a>
                                             </div>
