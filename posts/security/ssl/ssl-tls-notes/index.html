@@ -15,19 +15,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
-    <meta name="keywords" content="Operations,Database,SQL,MySQL,DBA," />
-    <meta name="description" content="管理MySQL用户。">
-    <meta name="keywords" content="Operations,Database,SQL,MySQL,DBA">
+    <meta name="keywords" content="Security,PKI,SSL/TLS,HTTPS,SSH," />
+    <meta name="description" content="PKI应用：SSL/TLS、HTTPS、SSH概述。">
+    <meta name="keywords" content="Security,PKI,SSL&#x2F;TLS,HTTPS,SSH">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="MySQL 用户管理命令">
-    <meta property="og:url" content="https://knowte.velne.win/posts/database/mysql/user/index.html">
+    <meta property="og:title" content="Security SSL&#x2F;TLS 历史及概述">
+    <meta property="og:url" content="https://knowte.velne.win/posts/security/ssl/ssl-tls-notes/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="管理MySQL用户。">
+    <meta property="og:description" content="PKI应用：SSL/TLS、HTTPS、SSH概述。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-07-18T08:01:16.600Z">
+    <meta property="og:updated_time" content="2018-06-03T16:54:59.279Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="MySQL 用户管理命令">
-    <meta name="twitter:description" content="管理MySQL用户。">
+    <meta name="twitter:title" content="Security SSL&#x2F;TLS 历史及概述">
+    <meta name="twitter:description" content="PKI应用：SSL/TLS、HTTPS、SSH概述。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -74,8 +74,8 @@
             }
         };
     </script>
-    <link rel="canonical" href="https://knowte.velne.win/posts/database/mysql/user/" />
-    <title>MySQL 用户管理命令 | Knowte</title>
+    <link rel="canonical" href="https://knowte.velne.win/posts/security/ssl/ssl-tls-notes/" />
+    <title>Security SSL/TLS 历史及概述 | Knowte</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +163,7 @@
                         <div id="posts" class="posts-expand">
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/user/">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/security/ssl/ssl-tls-notes/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Velne Wang">
       <meta itemprop="description" content="">
@@ -173,7 +173,7 @@
       <meta itemprop="name" content="Knowte">
     </span>
                                     <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">MySQL 用户管理命令</h1>
+                                        <h1 class="post-title" itemprop="name headline">Security SSL/TLS 历史及概述</h1>
                                         <div class="post-meta">
                                             <span class="post-time">
             
@@ -181,8 +181,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                                             <span class="post-meta-item-text">发表于</span>
-                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T01:00:00+09:00">
-                2018-06-12
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-30T01:00:00+09:00">
+                2018-05-30
               </time>
                                             </span>
                                             <span class="post-category">
@@ -193,90 +193,54 @@
               </span>
                                             <span class="post-meta-item-text">分类于</span>
                                             <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/notes-cli/" itemprop="url" rel="index">
-                    <span itemprop="name">notes-cli</span>
+                  <a href="/categories/notes-doc/" itemprop="url" rel="index">
+                    <span itemprop="name">notes-doc</span>
                                             </a>
                                             </span>
                                             </span>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p>管理<code>MySQL</code>用户。</p>
+                                        <p><code>PKI</code>应用：<code>SSL/TLS</code>、<code>HTTPS</code>、<code>SSH</code>概述。</p>
                                         <a id="more"></a>
-                                        <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'password'</span>;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <p><code>&#39;username&#39;</code>：用户名<br><code>&#39;host&#39;</code>：指定主机，本地用户为<code>localhost</code>，任意远程主机为通配符<code>%</code>。<br><code>&#39;password&#39;</code>：登陆密码，可以为空。</p>
-                                        <h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">USER</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h2 id="重命名用户"><a href="#重命名用户" class="headerlink" title="重命名用户"></a>重命名用户</h2>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="keyword">RENAME</span> <span class="keyword">USER</span> <span class="string">'username0'</span>@<span class="string">'host0'</span> <span class="keyword">TO</span> <span class="string">'username1'</span>@<span class="string">'host1'</span>;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2>
-                                        <p>更新mysql.user表<br>
-                                            <figure class="highlight sql">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line"><span class="keyword">USE</span> mysql;</span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">USER</span> <span class="keyword">SET</span> authentication_string=<span class="keyword">PASSWORD</span>(<span class="string">'password'</span>) <span class="keyword">WHERE</span> <span class="keyword">User</span>=<span class="string">'username'</span>;</span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <h1 id="SSL-TLS-历史"><a href="#SSL-TLS-历史" class="headerlink" title="SSL/TLS 历史"></a>SSL/TLS 历史</h1>
+                                        <p>1994年，<code>NetScape</code>设计了<code>SSL</code>1.0，但未发布。<br>1995年，<code>NetScape</code>发布了<code>SSL</code>2.0，很快发现有严重漏洞。<br>1996年，<code>SSL</code>3.0 问世，得到大规模应用， 2015年发现漏洞<code>POODLE</code>。</p>
+                                        <p>1999年，<code>ISOC</code>定义发布<code>SSL</code>的升级版<code>TLS</code>1.0 <a href="http://ietf.org/rfc/rfc2246.txt" target="_blank" rel="noopener">RFC2246</a>。<br>2006年，<code>TLS</code>1.1 <a href="http://ietf.org/rfc/rfc4346.txt" target="_blank" rel="noopener">RFC4346</a>。<br>2008年，<code>TLS</code>1.2 <a href="http://ietf.org/rfc/rfc5246.txt" target="_blank" rel="noopener">RFC5246</a>。<br>2011年，禁止<code>SSL</code>2.0 <a href="http://ietf.org/rfc/rfc6176.txt" target="_blank" rel="noopener">RFC6176</a>。</p>
+                                        <p>2014年，<code>TLS</code>1.3 开始筹备 <a href="https://tools.ietf.org/html/draft-ietf-tls-rfc5246-bis-00" target="_blank" rel="noopener">draft-ietf-tls-rfc5246-bis-00</a>。<br>2018年，<code>TLS</code>1.3 第28草案 <a href="https://tools.ietf.org/html/draft-ietf-tls-tls13-28" target="_blank" rel="noopener">draft-ietf-tls-tls13-28</a>。</p>
+                                        <h1 id="SSL-TLS-体系"><a href="#SSL-TLS-体系" class="headerlink" title="SSL/TLS 体系"></a>SSL/TLS 体系</h1>
+                                        <h2 id="Secure-Socket-Layer"><a href="#Secure-Socket-Layer" class="headerlink" title="Secure Socket Layer"></a>Secure Socket Layer</h2>
+                                        <p><code>SSL</code>, 安全套接字层, 传输层之上，对<code>Socket</code>连接的加密协议。实现客户端和服务器之间的安全传输。</p>
+                                        <h2 id="SSL-3-0-漏洞-POODLE"><a href="#SSL-3-0-漏洞-POODLE" class="headerlink" title="SSL 3.0 漏洞 POODLE"></a>SSL 3.0 漏洞 POODLE</h2>
+                                        <p>2014年10月15日，<code>Google</code>发现一个关于<code>SSLv3</code>的高危漏洞， 命名为<code>POODLE</code>( Padding Oracle On Downgraded Legacy Encryption )。<br><a href="https://security.googleblog.com/2014/10/this-poodle-bites-exploiting-ssl-30.html" target="_blank" rel="noopener">POODLE</a>。</p>
+                                        <h2 id="Transport-Layer-Security"><a href="#Transport-Layer-Security" class="headerlink" title="Transport Layer Security"></a>Transport Layer Security</h2>
+                                        <p><code>TLS</code>，传输层安全， 同样是传输层之上，用于任何两个应用程序之间的安全传输。<br><code>TLS</code>是基于<code>SSLv3</code>的后续发展</p>
+                                        <h2 id="OpenSSL"><a href="#OpenSSL" class="headerlink" title="OpenSSL"></a>OpenSSL</h2>
+                                        <p><code>OpenSSL</code>是<code>SSL/TLS</code>的一种开源实现。</p>
+                                        <h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2>
+                                        <p><code>HTTPS</code>，应用层协议，是在传输层使用<code>SSL/TLS</code>加密的<code>HTTP</code>， 通过<code>443端口</code>实现。</p>
+                                        <h2 id="Secure-Shell"><a href="#Secure-Shell" class="headerlink" title="Secure Shell"></a>Secure Shell</h2>
+                                        <p><code>SSH</code>, 应用层通信加密协议，通常用于远程登录会话。</p>
+                                        <h2 id="OpenSSH"><a href="#OpenSSH" class="headerlink" title="OpenSSH"></a>OpenSSH</h2>
+                                        <p><code>OpenSSH</code>是<code>SSH</code>的一种开源实现。</p>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
-                                            <a href="/tags/Operations/" rel="tag"># Operations</a>
-                                            <a href="/tags/Database/" rel="tag"># Database</a>
-                                            <a href="/tags/SQL/" rel="tag"># SQL</a>
-                                            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
-                                            <a href="/tags/DBA/" rel="tag"># DBA</a>
+                                            <a href="/tags/Security/" rel="tag"># Security</a>
+                                            <a href="/tags/PKI/" rel="tag"># PKI</a>
+                                            <a href="/tags/SSL-TLS/" rel="tag"># SSL/TLS</a>
+                                            <a href="/tags/HTTPS/" rel="tag"># HTTPS</a>
+                                            <a href="/tags/SSH/" rel="tag"># SSH</a>
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/server/tomcat/reason_phrases/" rel="next" title="Tomcat HTTP状态码描述">
-                <i class="fa fa-chevron-left"></i> Tomcat HTTP状态码描述
+                                                <a href="/posts/shell/bash/bashrc/" rel="next" title="Shell 一些Bash环境配置">
+                <i class="fa fa-chevron-left"></i> Shell 一些Bash环境配置
               </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/ide/eclipse/config/" rel="prev" title="Eclipse 偏好设置">
-                Eclipse 偏好设置 <i class="fa fa-chevron-right"></i>
+                                                <a href="/posts/shell/bash/bashback/" rel="prev" title="Bash 返回到原路径">
+                Bash 返回到原路径 <i class="fa fa-chevron-right"></i>
               </a>
                                             </div>
                                         </div>
