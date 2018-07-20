@@ -15,19 +15,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
-    <meta name="keywords" content="Operations,DBA,Database,SQL,MySQL," />
-    <meta name="description" content="在MySQL客户端，执行.sql脚本，以及初始化密码、用户、数据库等的命令及脚本。">
-    <meta name="keywords" content="Operations,DBA,Database,SQL,MySQL">
+    <meta name="keywords" content="Java,Standard,code," />
+    <meta name="description" content="Indentation使用4个空格(Space)  缩进。 设置1个 Tab↹ 为4个空格 。">
+    <meta name="keywords" content="Java,Standard,code">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="MySQL 初始数据命令">
-    <meta property="og:url" content="https://knowte.velne.win/posts/database/mysql/launch/index.html">
+    <meta property="og:title" content="Standard Java 开发规范">
+    <meta property="og:url" content="https://knowte.velne.win/posts/standard/code/java/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="在MySQL客户端，执行.sql脚本，以及初始化密码、用户、数据库等的命令及脚本。">
+    <meta property="og:description" content="Indentation使用4个空格(Space)  缩进。 设置1个 Tab↹ 为4个空格 。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-07-18T07:56:41.705Z">
+    <meta property="og:updated_time" content="2018-07-23T14:02:30.788Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="MySQL 初始数据命令">
-    <meta name="twitter:description" content="在MySQL客户端，执行.sql脚本，以及初始化密码、用户、数据库等的命令及脚本。">
+    <meta name="twitter:title" content="Standard Java 开发规范">
+    <meta name="twitter:description" content="Indentation使用4个空格(Space)  缩进。 设置1个 Tab↹ 为4个空格 。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -74,8 +74,8 @@
             }
         };
     </script>
-    <link rel="canonical" href="https://knowte.velne.win/posts/database/mysql/launch/" />
-    <title>MySQL 初始数据命令 | Knowte</title>
+    <link rel="canonical" href="https://knowte.velne.win/posts/standard/code/java/" />
+    <title>Standard Java 开发规范 | Knowte</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +163,7 @@
                         <div id="posts" class="posts-expand">
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/launch/">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/standard/code/java/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Velne Wang">
       <meta itemprop="description" content="">
@@ -173,7 +173,7 @@
       <meta itemprop="name" content="Knowte">
     </span>
                                     <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">MySQL 初始数据命令</h1>
+                                        <h1 class="post-title" itemprop="name headline">Standard Java 开发规范</h1>
                                         <div class="post-meta">
                                             <span class="post-time">
             
@@ -181,8 +181,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                                             <span class="post-meta-item-text">发表于</span>
-                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T01:00:00+09:00">
-                2018-06-03
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-20T01:00:00+09:00">
+                2018-07-20
               </time>
                                             </span>
                                             <span class="post-category">
@@ -193,103 +193,32 @@
               </span>
                                             <span class="post-meta-item-text">分类于</span>
                                             <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/notes-script/" itemprop="url" rel="index">
-                    <span itemprop="name">notes-script</span>
+                  <a href="/categories/standard-code/" itemprop="url" rel="index">
+                    <span itemprop="name">standard-code</span>
                                             </a>
                                             </span>
                                             </span>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p>在<code>MySQL</code>客户端，执行<code>.sql</code>脚本，以及初始化密码、用户、数据库等的命令及脚本。</p>
-                                        <a id="more"></a>
-                                        <h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2>
-                                        <h3 id="命令行下载入脚本"><a href="#命令行下载入脚本" class="headerlink" title="命令行下载入脚本"></a>命令行下载入脚本</h3>
-                                        <figure class="highlight bash">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">mysql -uroot -p &lt;/home/mysql_script.sql</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h3 id="交互模式下载入脚本"><a href="#交互模式下载入脚本" class="headerlink" title="交互模式下载入脚本"></a>交互模式下载入脚本</h3>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="comment">/*mysql*/</span></span><br><span class="line">source /home/mysql_script.sql;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h2 id="初始root密码"><a href="#初始root密码" class="headerlink" title="初始root密码"></a>初始root密码</h2>
-                                        <p>登录<code>MySQL</code>客户端后设定<code>root</code>密码。</p>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="comment">/*mysql_root_password*/</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'newpassword'</span>;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="string">'database'</span>;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h2 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h2>
-                                        <figure class="highlight sql">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line"></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">privileges</span> <span class="keyword">ON</span> databasename.tablename <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">GRANTS</span> <span class="keyword">FOR</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
+                                        <h1 id="Indentation"><a href="#Indentation" class="headerlink" title="Indentation"></a>Indentation</h1>
+                                        <p>使用4个<code>空格</code>(Space) <code></code> 缩进。</p>
+                                        <p>设置1个 <code>Tab↹</code> 为4个空格 <code></code>。</p>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
-                                            <a href="/tags/Operations/" rel="tag"># Operations</a>
-                                            <a href="/tags/DBA/" rel="tag"># DBA</a>
-                                            <a href="/tags/Database/" rel="tag"># Database</a>
-                                            <a href="/tags/SQL/" rel="tag"># SQL</a>
-                                            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+                                            <a href="/tags/Java/" rel="tag"># Java</a>
+                                            <a href="/tags/Standard/" rel="tag"># Standard</a>
+                                            <a href="/tags/code/" rel="tag"># code</a>
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/database/mysql/init/" rel="next" title="MySQL 初始服务脚本">
-                <i class="fa fa-chevron-left"></i> MySQL 初始服务脚本
+                                                <a href="/posts/lang/java/option/" rel="next" title="JVM HotSpot虚拟机参数说明">
+                <i class="fa fa-chevron-left"></i> JVM HotSpot虚拟机参数说明
               </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/database/mysql/privileges-provided/" rel="prev" title="MySQL 8.0 权限说明">
-                MySQL 8.0 权限说明 <i class="fa fa-chevron-right"></i>
-              </a>
                                             </div>
                                         </div>
                                     </footer>
