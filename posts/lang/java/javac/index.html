@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="theme-next mist use-motion" lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#222">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
+    <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
+    <meta name="keywords" content="Operations,Java,Compiler,javac,ECJ," />
+    <meta name="description" content="JDK标准工具中包含javac编译器，而Eclipse开发工具JDT(Eclipse Java development tools)中默认使用的是其自身实现的兼容编译器ECJ(Eclipse Compiler for Java)。而且由于JDT基于ECJ,所以在Eclipse中并不能方便地切换编译器。">
+    <meta name="keywords" content="Operations,Java,Compiler,javac,ECJ">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Java Compiler 编译器命令">
+    <meta property="og:url" content="https://knowte.velne.win/posts/lang/java/javac/index.html">
+    <meta property="og:site_name" content="Knowte">
+    <meta property="og:description" content="JDK标准工具中包含javac编译器，而Eclipse开发工具JDT(Eclipse Java development tools)中默认使用的是其自身实现的兼容编译器ECJ(Eclipse Compiler for Java)。而且由于JDT基于ECJ,所以在Eclipse中并不能方便地切换编译器。">
+    <meta property="og:locale" content="zh-Hans">
+    <meta property="og:updated_time" content="2018-07-18T02:32:11.293Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Java Compiler 编译器命令">
+    <meta name="twitter:description" content="JDK标准工具中包含javac编译器，而Eclipse开发工具JDT(Eclipse Java development tools)中默认使用的是其自身实现的兼容编译器ECJ(Eclipse Compiler for Java)。而且由于JDT基于ECJ,所以在Eclipse中并不能方便地切换编译器。">
+    <script type="text/javascript" id="hexo.configurations">
+        var NexT = window.NexT || {};
+        var CONFIG = {
+            root: '/',
+            scheme: 'Mist',
+            version: '5.1.4',
+            sidebar: {
+                "position": "left",
+                "display": "remove",
+                "offset": 12,
+                "b2t": false,
+                "scrollpercent": true,
+                "onmobile": false
+            },
+            fancybox: true,
+            tabs: true,
+            motion: {
+                "enable": true,
+                "async": false,
+                "transition": {
+                    "post_block": "fadeIn",
+                    "post_header": "slideDownIn",
+                    "post_body": "slideDownIn",
+                    "coll_header": "slideLeftIn",
+                    "sidebar": "slideUpIn"
+                }
+            },
+            duoshuo: {
+                userId: '0',
+                author: '博主'
+            },
+            algolia: {
+                applicationID: '',
+                apiKey: '',
+                indexName: '',
+                hits: {
+                    "per_page": 10
+                },
+                labels: {
+                    "input_placeholder": "Search for Posts",
+                    "hits_empty": "We didn't find any results for the search: ${query}",
+                    "hits_stats": "${hits} results found in ${time} ms"
+                }
+            }
+        };
+    </script>
+    <link rel="canonical" href="https://knowte.velne.win/posts/lang/java/javac/" />
+    <title>Java Compiler 编译器命令 | Knowte</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+    <div class="container sidebar-position-left page-post-detail">
+        <div class="headband"></div>
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="header-inner">
+                <div class="site-brand-wrapper">
+                    <div class="site-meta ">
+                        <div class="custom-logo-site-title">
+                            <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Knowte</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+                        </div>
+                        <p class="site-subtitle">A learning notes.</p>
+                    </div>
+                    <div class="site-nav-toggle">
+                        <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+                    </div>
+                </div>
+                <nav class="site-nav">
+                    <ul id="menu" class="menu">
+                        <li class="menu-item menu-item-home">
+                            <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-categories">
+                            <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-archives">
+                            <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-tags">
+                            <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-about">
+                            <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            关于
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-main">
+                            <a href="https://velne.win" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            主站
+          </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main" class="main">
+            <div class="main-inner">
+                <div class="content-wrap">
+                    <div id="content" class="content">
+                        <div id="posts" class="posts-expand">
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/lang/java/javac/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Velne Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Knowte">
+    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">Java Compiler 编译器命令</h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                                            <span class="post-meta-item-text">发表于</span>
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T01:00:00+09:00">
+                2018-07-04
+              </time>
+                                            </span>
+                                            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+                                            <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                                            <span class="post-meta-item-text">分类于</span>
+                                            <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/notes-cli/" itemprop="url" rel="index">
+                    <span itemprop="name">notes-cli</span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p><code>JDK</code>标准工具中包含<code>javac</code>编译器，而<code>Eclipse</code>开发工具<code>JDT</code>(Eclipse Java development tools)中默认使用的是其自身实现的兼容编译器<code>ECJ</code>(Eclipse Compiler for Java)。而且由于<code>JDT</code>基于<code>ECJ</code>,所以在<code>Eclipse</code>中并不能方便地切换编译器。</p>
+                                        <a id="more"></a>
+                                        <h2 id="编译命令"><a href="#编译命令" class="headerlink" title="编译命令"></a>编译命令</h2>
+                                        <figure class="highlight cmd">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">javac [ options ] [ sourcefiles ] [ classes ] [ @argfiles ]</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <h2 id="编译选项"><a href="#编译选项" class="headerlink" title="编译选项"></a>编译选项</h2>
+                                        <h3 id="调试选项"><a href="#调试选项" class="headerlink" title="调试选项"></a>调试选项</h3>
+                                        <p><code>-g</code><br>&ensp;&ensp;&ensp;&ensp;生成所有调试信息，包括局部变量。默认情况下，只生成行号和源文件信息。<br><code>-g:none</code><br>&ensp;&ensp;&ensp;&ensp;不生成任何调试信息。<br><code>-g:[keyword list]</code><br>&ensp;&ensp;&ensp;&ensp;仅生成某些类型的调试信息，由逗号分隔的关键字列表指定。有效关键字是：<br>&ensp;&ensp;&ensp;&ensp;<code>source</code><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Source file debugging information.<br>&ensp;&ensp;&ensp;&ensp;<code>lines</code><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Line number debugging information.<br>&ensp;&ensp;&ensp;&ensp;<code>vars</code><br>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Local variable debugging information.</p>
+                                        <h3 id="调试选项-Eclipse工程"><a href="#调试选项-Eclipse工程" class="headerlink" title="调试选项(Eclipse工程)"></a>调试选项(Eclipse工程)</h3>
+                                        <p>Project-&gt;Properties-&gt;Java Compiler</p>
+                                        <p>在”Classfile Generation”中</p>
+                                        <blockquote>
+                                            <p>Add variable …<br>Add line number …<br>Add source file name …</p>
+                                        </blockquote>
+                                        <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>
+                                        <p>“Eclipse Java-development-tools” <a href="https://www.eclipse.org/jdt/" target="_blank" rel="noopener">JDT</a><br>“Stackoverflow” <a href="https://stackoverflow.com/questions/3061654/what-is-the-difference-between-javac-and-the-eclipse-compiler" target="_blank" rel="noopener">javacVSecj</a><br>“Oracle Docs” <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html" target="_blank" rel="noopener">javac</a></p>
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-tags">
+                                            <a href="/tags/Operations/" rel="tag"># Operations</a>
+                                            <a href="/tags/Java/" rel="tag"># Java</a>
+                                            <a href="/tags/Compiler/" rel="tag"># Compiler</a>
+                                            <a href="/tags/javac/" rel="tag"># javac</a>
+                                            <a href="/tags/ECJ/" rel="tag"># ECJ</a>
+                                        </div>
+                                        <div class="post-nav">
+                                            <div class="post-nav-next post-nav-item">
+                                                <a href="/posts/lang/java/version-history/" rel="next" title="Java 版本历史及特性">
+                <i class="fa fa-chevron-left"></i> Java 版本历史及特性
+              </a>
+                                            </div>
+                                            <span class="post-nav-divider"></span>
+                                            <div class="post-nav-prev post-nav-item">
+                                                <a href="/posts/ide/eclipse/launch/" rel="prev" title="Eclipse 启动脚本">
+                Eclipse 启动脚本 <i class="fa fa-chevron-right"></i>
+              </a>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <div class="post-spread">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <div class="footer-inner">
+                <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+                    <span class="with-love">
+    <i class="fa fa-flask"></i>
+  </span>
+                    <span class="author" itemprop="copyrightHolder">Velne Wang</span>
+                </div>
+                <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+                <span class="post-meta-divider">|</span>
+                <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/velnewang/hexo-theme-txen">TxeN</a> v5.1.4</div>
+            </div>
+        </footer>
+        <div class="back-to-top">
+            <i class="fa fa-arrow-up"></i>
+            <span id="scrollpercent"><span>0</span>%</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+            window.Promise = null;
+        }
+    </script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+</body>
+
+</html>

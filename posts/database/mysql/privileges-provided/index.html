@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="theme-next mist use-motion" lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#222">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
+    <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
+    <meta name="keywords" content="Operations,DBA,Database,SQL,MySQL," />
+    <meta name="description" content="MySQL帐户的权限决定了帐户可以执行的操作。 MySQL权限在上下文应用和不同的操作级别上有所不同，分为数据库对象Database Objects Privileges、数据库结构Database Privileges、数据库管理Administrative Privileges三类权限。 MySQL权限在静态（服务器内建）和动态（运行时定义）方面也不同。">
+    <meta name="keywords" content="Operations,DBA,Database,SQL,MySQL">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MySQL 8.0 权限说明">
+    <meta property="og:url" content="https://knowte.velne.win/posts/database/mysql/privileges-provided/index.html">
+    <meta property="og:site_name" content="Knowte">
+    <meta property="og:description" content="MySQL帐户的权限决定了帐户可以执行的操作。 MySQL权限在上下文应用和不同的操作级别上有所不同，分为数据库对象Database Objects Privileges、数据库结构Database Privileges、数据库管理Administrative Privileges三类权限。 MySQL权限在静态（服务器内建）和动态（运行时定义）方面也不同。">
+    <meta property="og:locale" content="zh-Hans">
+    <meta property="og:updated_time" content="2018-07-18T08:01:18.120Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MySQL 8.0 权限说明">
+    <meta name="twitter:description" content="MySQL帐户的权限决定了帐户可以执行的操作。 MySQL权限在上下文应用和不同的操作级别上有所不同，分为数据库对象Database Objects Privileges、数据库结构Database Privileges、数据库管理Administrative Privileges三类权限。 MySQL权限在静态（服务器内建）和动态（运行时定义）方面也不同。">
+    <script type="text/javascript" id="hexo.configurations">
+        var NexT = window.NexT || {};
+        var CONFIG = {
+            root: '/',
+            scheme: 'Mist',
+            version: '5.1.4',
+            sidebar: {
+                "position": "left",
+                "display": "remove",
+                "offset": 12,
+                "b2t": false,
+                "scrollpercent": true,
+                "onmobile": false
+            },
+            fancybox: true,
+            tabs: true,
+            motion: {
+                "enable": true,
+                "async": false,
+                "transition": {
+                    "post_block": "fadeIn",
+                    "post_header": "slideDownIn",
+                    "post_body": "slideDownIn",
+                    "coll_header": "slideLeftIn",
+                    "sidebar": "slideUpIn"
+                }
+            },
+            duoshuo: {
+                userId: '0',
+                author: '博主'
+            },
+            algolia: {
+                applicationID: '',
+                apiKey: '',
+                indexName: '',
+                hits: {
+                    "per_page": 10
+                },
+                labels: {
+                    "input_placeholder": "Search for Posts",
+                    "hits_empty": "We didn't find any results for the search: ${query}",
+                    "hits_stats": "${hits} results found in ${time} ms"
+                }
+            }
+        };
+    </script>
+    <link rel="canonical" href="https://knowte.velne.win/posts/database/mysql/privileges-provided/" />
+    <title>MySQL 8.0 权限说明 | Knowte</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+    <div class="container sidebar-position-left page-post-detail">
+        <div class="headband"></div>
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="header-inner">
+                <div class="site-brand-wrapper">
+                    <div class="site-meta ">
+                        <div class="custom-logo-site-title">
+                            <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Knowte</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+                        </div>
+                        <p class="site-subtitle">A learning notes.</p>
+                    </div>
+                    <div class="site-nav-toggle">
+                        <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+                    </div>
+                </div>
+                <nav class="site-nav">
+                    <ul id="menu" class="menu">
+                        <li class="menu-item menu-item-home">
+                            <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-categories">
+                            <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-archives">
+                            <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-tags">
+                            <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-about">
+                            <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+            
+            关于
+          </a>
+                        </li>
+                        <li class="menu-item menu-item-main">
+                            <a href="https://velne.win" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            主站
+          </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main" class="main">
+            <div class="main-inner">
+                <div class="content-wrap">
+                    <div id="content" class="content">
+                        <div id="posts" class="posts-expand">
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/privileges-provided/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Velne Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Knowte">
+    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">MySQL 8.0 权限说明</h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+                                            <span class="post-meta-item-text">发表于</span>
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T01:00:00+09:00">
+                2018-06-08
+              </time>
+                                            </span>
+                                            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+                                            <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+                                            <span class="post-meta-item-text">分类于</span>
+                                            <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/comments-argument/" itemprop="url" rel="index">
+                    <span itemprop="name">comments-argument</span>
+                                            </a>
+                                            </span>
+                                            </span>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p><code>MySQL</code>帐户的权限决定了帐户可以执行的操作。</p>
+                                        <p><code>MySQL</code>权限在上下文应用和不同的操作级别上有所不同，分为数据库对象<code>Database Objects Privileges</code>、数据库结构<code>Database Privileges</code>、数据库管理<code>Administrative Privileges</code>三类权限。</p>
+                                        <p><code>MySQL</code>权限在静态（服务器内建）和动态（运行时定义）方面也不同。</p>
+                                        <a id="more"></a>
+                                        <h2 id="静态权限列表"><a href="#静态权限列表" class="headerlink" title="静态权限列表"></a>静态权限列表</h2>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>权限</th>
+                                                    <th>列</th>
+                                                    <th>上下文</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><code>ALL [PRIVILEGES]</code></td>
+                                                    <td>Synonym for “all privileges”</td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>ALTER</code></td>
+                                                    <td><code>Alter_priv</code></td>
+                                                    <td>Tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>ALTER ROUTINE</code></td>
+                                                    <td><code>Alter_routine_priv</code></td>
+                                                    <td>Stored routines</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE</code></td>
+                                                    <td><code>Create_priv</code></td>
+                                                    <td>Databases, tables, or indexes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE ROLE</code></td>
+                                                    <td><code>Create_role_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE ROUTINE</code></td>
+                                                    <td><code>Create_routine_priv</code></td>
+                                                    <td>Stored routines</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE TABLESPACE</code></td>
+                                                    <td><code>Create_tablespace_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE TEMPORARY TABLES</code></td>
+                                                    <td><code>Create_tmp_table_priv</code></td>
+                                                    <td>Tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE USER</code></td>
+                                                    <td><code>Create_user_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>CREATE VIEW</code></td>
+                                                    <td><code>Create_view_priv</code></td>
+                                                    <td>Views</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>DELETE</code></td>
+                                                    <td><code>Delete_priv</code></td>
+                                                    <td>Tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>DROP</code></td>
+                                                    <td><code>Drop_priv</code></td>
+                                                    <td>Databases, tables, or views</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>DROP ROLE</code></td>
+                                                    <td><code>Drop_role_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>EVENT</code></td>
+                                                    <td><code>Event_priv</code></td>
+                                                    <td>Databases</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>EXECUTE</code></td>
+                                                    <td><code>Execute_priv</code></td>
+                                                    <td>Stored routines</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>FILE</code></td>
+                                                    <td><code>File_priv</code></td>
+                                                    <td>File access on server host</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>GRANT OPTION</code></td>
+                                                    <td><code>Grant_priv</code></td>
+                                                    <td>Databases, tables, or stored routines</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>INDEX</code></td>
+                                                    <td><code>Index_priv</code></td>
+                                                    <td>Tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>INSERT</code></td>
+                                                    <td><code>Insert_priv</code></td>
+                                                    <td>Tables or columns</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>LOCK TABLES</code></td>
+                                                    <td><code>Lock_tables_priv</code></td>
+                                                    <td>Databases</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>PROCESS</code></td>
+                                                    <td><code>Process_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>PROXY</code></td>
+                                                    <td>See <code>Process_priv</code> table</td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>REFERENCES</code></td>
+                                                    <td><code>References_priv</code></td>
+                                                    <td>Databases or tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>RELOAD</code></td>
+                                                    <td><code>Reload_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>REPLICATION CLIENT</code></td>
+                                                    <td><code>Repl_client_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>REPLICATION SLAVE</code></td>
+                                                    <td><code>Repl_slave_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>SELECT</code></td>
+                                                    <td><code>Select_priv</code></td>
+                                                    <td>Tables or columns</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>SHOW DATABASES</code></td>
+                                                    <td><code>Show_db_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>SHOW VIEW</code></td>
+                                                    <td><code>Show_view_priv</code></td>
+                                                    <td>Views</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>SHUTDOWN</code></td>
+                                                    <td><code>Shutdown_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>SUPER</code></td>
+                                                    <td><code>Super_priv</code></td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>TRIGGER</code></td>
+                                                    <td><code>Trigger_priv</code></td>
+                                                    <td>Tables</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>UPDATE</code></td>
+                                                    <td><code>Update_priv</code></td>
+                                                    <td>Tables or columns</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><code>USAGE</code></td>
+                                                    <td>Synonym for “no privileges”</td>
+                                                    <td>Server administration</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p>用户权限列表参考详细<a href="https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html" target="_blank" rel="noopener">MySQL官方说明</a></p>
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-tags">
+                                            <a href="/tags/Operations/" rel="tag"># Operations</a>
+                                            <a href="/tags/DBA/" rel="tag"># DBA</a>
+                                            <a href="/tags/Database/" rel="tag"># Database</a>
+                                            <a href="/tags/SQL/" rel="tag"># SQL</a>
+                                            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+                                        </div>
+                                        <div class="post-nav">
+                                            <div class="post-nav-next post-nav-item">
+                                                <a href="/posts/database/mysql/launch/" rel="next" title="MySQL 初始数据命令">
+                <i class="fa fa-chevron-left"></i> MySQL 初始数据命令
+              </a>
+                                            </div>
+                                            <span class="post-nav-divider"></span>
+                                            <div class="post-nav-prev post-nav-item">
+                                                <a href="/posts/database/mysql/privileges-cli/" rel="prev" title="MySQL 权限管理命令">
+                MySQL 权限管理命令 <i class="fa fa-chevron-right"></i>
+              </a>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <div class="post-spread">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <div class="footer-inner">
+                <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+                    <span class="with-love">
+    <i class="fa fa-flask"></i>
+  </span>
+                    <span class="author" itemprop="copyrightHolder">Velne Wang</span>
+                </div>
+                <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+                <span class="post-meta-divider">|</span>
+                <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/velnewang/hexo-theme-txen">TxeN</a> v5.1.4</div>
+            </div>
+        </footer>
+        <div class="back-to-top">
+            <i class="fa fa-arrow-up"></i>
+            <span id="scrollpercent"><span>0</span>%</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+            window.Promise = null;
+        }
+    </script>
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+</body>
+
+</html>
