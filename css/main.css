@@ -364,6 +364,9 @@ ruby rt {
   position: absolute;
   top: -9999px;
 }
+.use-motion .motion-element {
+  opacity: 0;
+}
 table {
   margin: 20px 0;
   width: 100%;
@@ -1104,6 +1107,16 @@ pre .javascript .function {
   font-size: 13px;
   color: #999;
 }
+.use-motion .brand {
+  opacity: 0;
+}
+.use-motion .logo,
+.use-motion .site-title,
+.use-motion .site-subtitle {
+  opacity: 0;
+  position: relative;
+  top: -10px;
+}
 .site-nav-toggle {
   display: none;
   position: absolute;
@@ -1171,6 +1184,9 @@ pre .javascript .function {
 .menu .menu-item .fa {
   margin-right: 5px;
 }
+.use-motion .menu-item {
+  opacity: 0;
+}
 .post-body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -1204,6 +1220,20 @@ pre .javascript .function {
   -ms-transform: rotate(30deg);
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
+}
+.use-motion .post-block,
+.use-motion .pagination,
+.use-motion .comments {
+  opacity: 0;
+}
+.use-motion .post-header {
+  opacity: 0;
+}
+.use-motion .post-body {
+  opacity: 0;
+}
+.use-motion .collection-title {
+  opacity: 0;
 }
 .posts-expand {
   padding-top: 40px;
@@ -1761,7 +1791,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd5e5;
+  background: #ffc3ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2622,6 +2652,12 @@ hr {
   .logo-line-after i {
     height: 3px;
   }
+}
+.use-motion .logo-line-before i {
+  left: -100%;
+}
+.use-motion .logo-line-after i {
+  right: -100%;
 }
 .site-subtitle {
   display: none;

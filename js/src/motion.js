@@ -189,11 +189,10 @@ $(document).ready(function () {
     queue: [],
     cursor: -1,
     add: function (fn) {
-      // this.queue.push(fn);
+      this.queue.push(fn);
       return this;
     },
     next: function () {
-      return;
       this.cursor++;
       var fn = this.queue[this.cursor];
       $.isFunction(fn) && fn(NexT.motion.integrator);
