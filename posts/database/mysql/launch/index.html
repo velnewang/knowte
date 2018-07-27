@@ -36,7 +36,7 @@
             version: '5.1.4',
             sidebar: {
                 "position": "left",
-                "display": "remove",
+                "display": "hide",
                 "offset": 12,
                 "b2t": false,
                 "scrollpercent": true,
@@ -300,6 +300,73 @@
                         </div>
                     </div>
                 </div>
+                <div class="sidebar-toggle">
+                    <div class="sidebar-toggle-line-wrap">
+                        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+                    </div>
+                </div>
+                <aside id="sidebar" class="sidebar">
+                    <div class="sidebar-inner">
+                        <ul class="sidebar-nav motion-element">
+                            <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                                文章目录
+                            </li>
+                            <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                                站点概览
+                            </li>
+                        </ul>
+                        <section class="site-overview-wrap sidebar-panel">
+                            <div class="site-overview">
+                                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <p class="site-author-name" itemprop="name">Velne Wang</p>
+                                    <p class="site-description motion-element" itemprop="description">Insist on not lazy.</p>
+                                </div>
+                                <nav class="site-state motion-element">
+                                    <div class="site-state-item site-state-posts">
+                                        <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+                                    </div>
+                                    <div class="site-state-item site-state-categories">
+                                        <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+                                    </div>
+                                    <div class="site-state-item site-state-tags">
+                                        <a href="/tags/index.html">
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </section>
+                        <!--noindex-->
+                        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+                            <div class="post-toc">
+                                <div class="post-toc-content">
+                                    <ol class="nav">
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#执行脚本"><span class="nav-number">1.</span> <span class="nav-text">执行脚本</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#命令行下载入脚本"><span class="nav-number">1.1.</span> <span class="nav-text">命令行下载入脚本</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#交互模式下载入脚本"><span class="nav-number">1.2.</span> <span class="nav-text">交互模式下载入脚本</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#初始root密码"><span class="nav-number">2.</span> <span class="nav-text">初始root密码</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库"><span class="nav-number">3.</span> <span class="nav-text">创建数据库</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#新建用户"><span class="nav-number">4.</span> <span class="nav-text">新建用户</span></a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <!--/noindex-->
+                    </div>
+                </aside>
             </div>
         </main>
         <footer id="footer" class="footer">
