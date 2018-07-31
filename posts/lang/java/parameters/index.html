@@ -24,7 +24,7 @@
     <meta property="og:site_name" content="Knowte">
     <meta property="og:description" content="Java HotSpot 虚拟机详细的启动命令行参数。基于 Java 8，用于 Unix 与 Windows。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-07-27T04:35:29.139Z">
+    <meta property="og:updated_time" content="2018-07-27T10:30:31.299Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="JVM HotSpot 虚拟机参数说明">
     <meta name="twitter:description" content="Java HotSpot 虚拟机详细的启动命令行参数。基于 Java 8，用于 Unix 与 Windows。">
@@ -204,7 +204,7 @@
                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                  1,093
+                  1,091
                 </span>
                                             </div>
                                         </div>
@@ -212,7 +212,7 @@
                                     <div class="post-body" itemprop="articleBody">
                                         <p><code>Java</code> <code>HotSpot</code> 虚拟机详细的启动命令行参数。基于 <code>Java</code> 8，用于 <code>Unix</code> 与 <code>Windows</code>。</p>
                                         <a id="more"></a>
-                                        <h2 id="命令行格式"><a href="#命令行格式" class="headerlink" title="命令行格式"></a>命令行格式</h2>
+                                        <h2 id="提要-Synopsis"><a href="#提要-Synopsis" class="headerlink" title="提要 Synopsis"></a><ruby>提要<rp> </rp><rt>Synopsis</rt></ruby></h2>
                                         <p><strong>java</strong> <em>[options]</em> <em>classname</em> <em>[args]</em></p>
                                         <p><strong>java</strong> <em>[options]</em> <strong>-jar</strong> <em>filename</em> <em>[args]</em></p>
                                         <p><strong>javaw</strong> <em>[options]</em> <em>classname</em> <em>[args]</em> <sup><em>(Windows)</em></sup></p>
@@ -250,11 +250,11 @@
                                         <blockquote>
                                             <p>Standard options are guaranteed to be supported by all implementations of the Java Virtual Machine (JVM). They are used for common actions, such as checking the version of the JRE, setting the class path, enabling verbose output, and so on.</p>
                                         </blockquote>
-                                        <p>非标准选项是针对 <code>Java</code> <code>HotSpot</code> 虚拟机的通用选项，因此不能保证所有的 <code>JVM</code> 实现都支持它们，并有可能会发生变化。这些选项以 <strong>-X</strong> 开头。</p>
+                                        <p>非标准选项是针对 <code>Java</code> <code>HotSpot</code> 虚拟机的通用选项，因此不能保证所有的 <code>JVM</code> 实现都支持它们，并有可能会发生变化。这些选项以 <code>-X</code> 开头。</p>
                                         <blockquote>
                                             <p>Non-standard options are general purpose options that are specific to the Java HotSpot Virtual Machine, so they are not guaranteed to be supported by all JVM implementations, and are subject to change. These options start with -X.</p>
                                         </blockquote>
-                                        <p>不建议随意使用高级选项。这些开发者选项是用语调整 <code>Java</code> <code>HotSpot</code> 虚拟机操作的特定范围，这些范围通常有特定的系统要求，并有可能需要系统配置参数的访问权限。它们也不能被保证被所有的 <code>JVM</code> 实现支持，以及有可能会发生变化。高级选项以 <strong>-XX</strong> 开头。</p>
+                                        <p>不建议随意使用高级选项。这些开发者选项是用语调整 <code>Java</code> <code>HotSpot</code> 虚拟机操作的特定范围，这些范围通常有特定的系统要求，并有可能需要系统配置参数的访问权限。它们也不能被保证被所有的 <code>JVM</code> 实现支持，以及有可能会发生变化。高级选项以 <code>-XX</code> 开头。</p>
                                         <blockquote>
                                             <p>Advanced options are not recommended for casual use. These are developer options used for tuning specific areas of the Java HotSpot Virtual Machine operation that often have specific system requirements and may require privileged access to system configuration parameters. They are also not guaranteed to be supported by all JVM implementations, and are subject to change. Advanced options start with -XX.</p>
                                         </blockquote>
@@ -262,7 +262,7 @@
                                         <blockquote>
                                             <p>To keep track of the options that were deprecated or removed in the latest release, there is a section named Deprecated and Removed Options at the end of the document.</p>
                                         </blockquote>
-                                        <p>布尔选项用于启用默认禁用的功能或禁用默认启用的功能。这些选项不需要参数。布尔类的 <strong>-X</strong> 选项使用加号启用（-XX:+OptionName），以及使用减号禁用（-XX:-OptionName）。</p>
+                                        <p>布尔选项用于启用默认禁用的功能或禁用默认启用的功能。这些选项不需要参数。布尔类的 <strong>-X</strong> 选项使用加号启用（<code>-XX:+OptionName</code>），以及使用减号禁用（<code>-XX:-OptionName</code>）。</p>
                                         <blockquote>
                                             <p>Boolean options are used to either enable a feature that is disabled by default or disable a feature that is enabled by default. Such options do not require a parameter. Boolean -XX options are enabled using the plus sign (-XX:+OptionName) and disabled using the minus sign (-XX:-OptionName).</p>
                                         </blockquote>
@@ -298,6 +298,9 @@
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
+                                                <a href="/posts/continuous/git/git-command/" rel="prev" title="Git 简单命令">
+                Git 简单命令 <i class="fa fa-chevron-right"></i>
+              </a>
                                             </div>
                                         </div>
                                     </footer>
@@ -335,7 +338,7 @@
                                     <div class="site-state-item site-state-posts">
                                         <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
                                     </div>
@@ -347,7 +350,7 @@
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">48</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                                     </div>
@@ -359,7 +362,7 @@
                             <div class="post-toc">
                                 <div class="post-toc-content">
                                     <ol class="nav">
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#命令行格式"><span class="nav-number">1.</span> <span class="nav-text">命令行格式</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#提要-Synopsis"><span class="nav-number">1.</span> <span class="nav-text">提要 Synopsis</span></a></li>
                                         <li class="nav-item nav-level-2"><a class="nav-link" href="#选项-Option"><span class="nav-number">2.</span> <span class="nav-text">选项 Option</span></a>
                                             <ol class="nav-child">
                                                 <li class="nav-item nav-level-3"><a class="nav-link" href="#标准选项-Standard-Options"><span class="nav-number">2.1.</span> <span class="nav-text">标准选项 Standard Options</span></a></li>

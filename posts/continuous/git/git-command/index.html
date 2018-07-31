@@ -15,19 +15,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
-    <meta name="keywords" content="Operations,Database,SQL,MySQL,DBA," />
-    <meta name="description" content="在MySQL客户端，执行.sql脚本，以及初始化密码、用户、数据库等的命令及脚本。">
-    <meta name="keywords" content="Operations,Database,SQL,MySQL,DBA">
+    <meta name="keywords" content="Operations,Cotinuous,Git," />
+    <meta name="description" content="Git 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。">
+    <meta name="keywords" content="Operations,Cotinuous,Git">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="MySQL 初始数据命令">
-    <meta property="og:url" content="https://knowte.velne.win/posts/database/mysql/launch/index.html">
+    <meta property="og:title" content="Git 简单命令">
+    <meta property="og:url" content="https://knowte.velne.win/posts/continuous/git/git-command/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="在MySQL客户端，执行.sql脚本，以及初始化密码、用户、数据库等的命令及脚本。">
+    <meta property="og:description" content="Git 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-07-18T07:56:41.705Z">
+    <meta property="og:updated_time" content="2018-08-02T10:29:58.609Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="MySQL 初始数据命令">
-    <meta name="twitter:description" content="在MySQL客户端，执行.sql脚本，以及初始化密码、用户、数据库等的命令及脚本。">
+    <meta name="twitter:title" content="Git 简单命令">
+    <meta name="twitter:description" content="Git 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -74,8 +74,8 @@
             }
         };
     </script>
-    <link rel="canonical" href="https://knowte.velne.win/posts/database/mysql/launch/" />
-    <title>MySQL 初始数据命令 | Knowte</title>
+    <link rel="canonical" href="https://knowte.velne.win/posts/continuous/git/git-command/" />
+    <title>Git 简单命令 | Knowte</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +163,7 @@
                         <div id="posts" class="posts-expand">
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/launch/">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/continuous/git/git-command/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Velne Wang">
       <meta itemprop="description" content="">
@@ -173,7 +173,7 @@
       <meta itemprop="name" content="Knowte">
     </span>
                                     <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">MySQL 初始数据命令</h1>
+                                        <h1 class="post-title" itemprop="name headline">Git 简单命令</h1>
                                         <div class="post-meta">
                                             <span class="post-time">
             
@@ -181,8 +181,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                                             <span class="post-meta-item-text">发表于</span>
-                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T01:00:00+09:00">
-                2018-06-03
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T01:00:00+09:00">
+                2018-07-29
               </time>
                                             </span>
                                             <span class="post-category">
@@ -193,8 +193,8 @@
               </span>
                                             <span class="post-meta-item-text">分类于</span>
                                             <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/notes-script/" itemprop="url" rel="index">
-                    <span itemprop="name">notes-script</span>
+                  <a href="/categories/notes-cli/" itemprop="url" rel="index">
+                    <span itemprop="name">notes-cli</span>
                                             </a>
                                             </span>
                                             </span>
@@ -204,100 +204,107 @@
                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                  130
+                  240
                 </span>
                                             </div>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p>在<code>MySQL</code>客户端，执行<code>.sql</code>脚本，以及初始化密码、用户、数据库等的命令及脚本。</p>
+                                        <p><code>Git</code> 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。</p>
                                         <a id="more"></a>
-                                        <h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2>
-                                        <h3 id="命令行下载入脚本"><a href="#命令行下载入脚本" class="headerlink" title="命令行下载入脚本"></a>命令行下载入脚本</h3>
-                                        <figure class="highlight bash">
+                                        <h2 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h2>
+                                        <h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3>
+                                        <p>设置用户标识，做到简单的用户识别。<br>详见 <code>git config --help</code>。</p>
+                                        <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
                                                         <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">mysql -uroot -p &lt;/home/mysql_script.sql</span><br></pre>
+                                                        <pre><span class="line">$ git config --global user.name <span class="string">"User Name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@localhost"</span></span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h3 id="交互模式下载入脚本"><a href="#交互模式下载入脚本" class="headerlink" title="交互模式下载入脚本"></a>交互模式下载入脚本</h3>
-                                        <figure class="highlight sql">
+                                        <h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3>
+                                        <p>在空目录下初始化，创建版本库（<code>repository</code>）。</p>
+                                        <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line"><span class="comment">/*mysql*/</span></span><br><span class="line">source /home/mysql_script.sql;</span><br></pre>
+                                                        <pre><span class="line">$ mkdir repo</span><br><span class="line">$ <span class="built_in">cd</span> repo</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> ~/repo/.git/</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h2 id="初始root密码"><a href="#初始root密码" class="headerlink" title="初始root密码"></a>初始root密码</h2>
-                                        <p>登录<code>MySQL</code>客户端后设定<code>root</code>密码。</p>
-                                        <figure class="highlight sql">
+                                        <h2 id="提交节点操作"><a href="#提交节点操作" class="headerlink" title="提交节点操作"></a>提交节点操作</h2>
+                                        <h3 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h3>
+                                        <p>查看仓库状态。</p>
+                                        <h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3>
+                                        <p>将文件添加到版本库。</p>
+                                        <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line"><span class="comment">/*mysql_root_password*/</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'newpassword'</span>;</span><br></pre>
+                                                        <pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"some text"</span> &gt; file.txt  <span class="comment"># 示例，新建一个文件</span></span><br><span class="line">$ git add file.txt</span><br><span class="line">$ git add .  <span class="comment"># . 表示全部</span></span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2>
-                                        <figure class="highlight sql">
+                                        <h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3>
+                                        <p>提交记录，相当于保存项目快照。</p>
+                                        <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
                                                         <pre><span class="line">1</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> <span class="string">'database'</span>;</span><br></pre>
+                                                        <pre><span class="line">git commit -m <span class="string">"comments"</span></span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h2 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h2>
-                                        <figure class="highlight sql">
+                                        <h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3>
+                                        <p>按行比较文件与版本库历史中文件的不同。</p>
+                                        <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre>
+                                                        <pre><span class="line">1</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line"></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">privileges</span> <span class="keyword">ON</span> databasename.tablename <span class="keyword">TO</span> <span class="string">'username'</span>@<span class="string">'host'</span> <span class="keyword">WITH</span> <span class="keyword">GRANT</span> <span class="keyword">OPTION</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SHOW</span> <span class="keyword">GRANTS</span> <span class="keyword">FOR</span> <span class="string">'username'</span>@<span class="string">'host'</span>;</span><br></pre>
+                                                        <pre><span class="line">$ git diff file.txt</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
+                                        <h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2>
+                                        <h2 id="TODO"><a href="#TODO" class="headerlink" title="//TODO"></a>//TODO</h2>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
                                             <a href="/tags/Operations/" rel="tag"># Operations</a>
-                                            <a href="/tags/Database/" rel="tag"># Database</a>
-                                            <a href="/tags/SQL/" rel="tag"># SQL</a>
-                                            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
-                                            <a href="/tags/DBA/" rel="tag"># DBA</a>
+                                            <a href="/tags/Cotinuous/" rel="tag"># Cotinuous</a>
+                                            <a href="/tags/Git/" rel="tag"># Git</a>
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/database/mysql/init/" rel="next" title="MySQL 初始服务脚本">
-                <i class="fa fa-chevron-left"></i> MySQL 初始服务脚本
+                                                <a href="/posts/lang/java/parameters/" rel="next" title="JVM HotSpot 虚拟机参数说明">
+                <i class="fa fa-chevron-left"></i> JVM HotSpot 虚拟机参数说明
               </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/database/mysql/privileges-provided/" rel="prev" title="MySQL 8.0 权限说明">
-                MySQL 8.0 权限说明 <i class="fa fa-chevron-right"></i>
+                                                <a href="/posts/continuous/git/graph-script/" rel="prev" title="Git 简单维护命令">
+                Git 简单维护命令 <i class="fa fa-chevron-right"></i>
               </a>
                                             </div>
                                         </div>
@@ -360,15 +367,22 @@
                             <div class="post-toc">
                                 <div class="post-toc-content">
                                     <ol class="nav">
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#执行脚本"><span class="nav-number">1.</span> <span class="nav-text">执行脚本</span></a>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#初始化操作"><span class="nav-number">1.</span> <span class="nav-text">初始化操作</span></a>
                                             <ol class="nav-child">
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#命令行下载入脚本"><span class="nav-number">1.1.</span> <span class="nav-text">命令行下载入脚本</span></a></li>
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#交互模式下载入脚本"><span class="nav-number">1.2.</span> <span class="nav-text">交互模式下载入脚本</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-config"><span class="nav-number">1.1.</span> <span class="nav-text">git config</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-init"><span class="nav-number">1.2.</span> <span class="nav-text">git init</span></a></li>
                                             </ol>
                                         </li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#初始root密码"><span class="nav-number">2.</span> <span class="nav-text">初始root密码</span></a></li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据库"><span class="nav-number">3.</span> <span class="nav-text">创建数据库</span></a></li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#新建用户"><span class="nav-number">4.</span> <span class="nav-text">新建用户</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#提交节点操作"><span class="nav-number">2.</span> <span class="nav-text">提交节点操作</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-status"><span class="nav-number">2.1.</span> <span class="nav-text">git status</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-add"><span class="nav-number">2.2.</span> <span class="nav-text">git add</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit"><span class="nav-number">2.3.</span> <span class="nav-text">git commit</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-diff"><span class="nav-number">2.4.</span> <span class="nav-text">git diff</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-number">3.</span> <span class="nav-text">分支操作</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-number">4.</span> <span class="nav-text">//TODO</span></a></li>
                                     </ol>
                                 </div>
                             </div>
