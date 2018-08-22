@@ -24,7 +24,7 @@
     <meta property="og:site_name" content="Knowte">
     <meta property="og:description" content="一些简单的Bash环境配置，alias`PS1`等。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-06-03T16:54:59.301Z">
+    <meta property="og:updated_time" content="2018-08-31T03:22:16.641Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Shell 一些Bash环境配置">
     <meta name="twitter:description" content="一些简单的Bash环境配置，alias`PS1`等。">
@@ -204,7 +204,7 @@
                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                  194
+                  437
                 </span>
                                             </div>
                                         </div>
@@ -218,10 +218,10 @@
                                                 <table>
                                                     <tr>
                                                         <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
                                                         </td>
                                                         <td class="code">
-                                                            <pre><span class="line"><span class="comment"># --show-control-chars: help showing Korean or accented characters</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F --color=auto --show-control-chars'</span></span><br></pre>
+                                                            <pre><span class="line"><span class="comment"># alias l.='ls -d .* --color=auto'</span></span><br><span class="line"><span class="comment"># --show-control-chars: help showing accented characters</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F --color=auto --show-control-chars'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></span><br><span class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></span><br></pre>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -235,10 +235,10 @@
                                                 <table>
                                                     <tr>
                                                         <td class="gutter">
-                                                            <pre><span class="line">1</span><br></pre>
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
                                                         </td>
                                                         <td class="code">
-                                                            <pre><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\h \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0m\]\n\$ '</span></span><br></pre>
+                                                            <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]▄[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]▀\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]▌[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]▌\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]█ [\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]█ \$\[\033[0m\] '</span></span><br></pre>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -250,10 +250,10 @@
                                                 <table>
                                                     <tr>
                                                         <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
                                                         </td>
                                                         <td class="code">
-                                                            <pre><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\h \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\[\033[0m\]\n\$ '</span></span><br></pre>
+                                                            <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▀\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▌\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ \[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]█ \[\033[0;32m\]\$\[\033[0m\] '</span></span><br></pre>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -319,19 +319,19 @@
                                     <div class="site-state-item site-state-posts">
                                         <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
                                     </div>
