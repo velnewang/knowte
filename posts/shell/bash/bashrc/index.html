@@ -1,783 +1,400 @@
 <!DOCTYPE html>
-
-
-
-
 <html class="theme-next mist" lang="zh-Hans">
+
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-  <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-  
-
-<link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Operations,Shell,Bash,bashrc," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="一些简单的Bash环境配置，alias`PS1`等。">
-<meta name="keywords" content="Operations,Shell,Bash,bashrc">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Shell 一些Bash环境配置">
-<meta property="og:url" content="https://knowte.velne.win/posts/shell/bash/bashrc/index.html">
-<meta property="og:site_name" content="Knowte">
-<meta property="og:description" content="一些简单的Bash环境配置，alias`PS1`等。">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-31T03:22:16.641Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell 一些Bash环境配置">
-<meta name="twitter:description" content="一些简单的Bash环境配置，alias`PS1`等。">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: '博主'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="https://knowte.velne.win/posts/shell/bash/bashrc/"/>
-
-
-
-
-
-  <title>Shell 一些Bash环境配置 | Knowte</title>
-  
-
-
-
-
-
-
-
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#222">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
+    <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
+    <meta name="keywords" content="Operations,Shell,Bash,bashrc," />
+    <meta name="description" content="一些简单的Bash环境配置，alias`PS1`等。">
+    <meta name="keywords" content="Operations,Shell,Bash,bashrc">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Shell 一些Bash环境配置">
+    <meta property="og:url" content="https://knowte.velne.win/posts/shell/bash/bashrc/index.html">
+    <meta property="og:site_name" content="Knowte">
+    <meta property="og:description" content="一些简单的Bash环境配置，alias`PS1`等。">
+    <meta property="og:locale" content="zh-Hans">
+    <meta property="og:updated_time" content="2018-08-31T03:22:16.641Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Shell 一些Bash环境配置">
+    <meta name="twitter:description" content="一些简单的Bash环境配置，alias`PS1`等。">
+    <script type="text/javascript" id="hexo.configurations">
+        var NexT = window.NexT || {};
+        var CONFIG = {
+            root: '/',
+            scheme: 'Mist',
+            version: '5.1.4',
+            sidebar: {
+                "position": "left",
+                "display": "hide",
+                "offset": 12,
+                "b2t": false,
+                "scrollpercent": true,
+                "onmobile": false
+            },
+            fancybox: true,
+            tabs: true,
+            motion: {
+                "enable": false,
+                "async": false,
+                "transition": {
+                    "post_block": "fadeIn",
+                    "post_header": "slideDownIn",
+                    "post_body": "slideDownIn",
+                    "coll_header": "slideLeftIn",
+                    "sidebar": "slideUpIn"
+                }
+            },
+            duoshuo: {
+                userId: '0',
+                author: '博主'
+            },
+            algolia: {
+                applicationID: '',
+                apiKey: '',
+                indexName: '',
+                hits: {
+                    "per_page": 10
+                },
+                labels: {
+                    "input_placeholder": "Search for Posts",
+                    "hits_empty": "We didn't find any results for the search: ${query}",
+                    "hits_stats": "${hits} results found in ${time} ms"
+                }
+            }
+        };
+    </script>
+    <link rel="canonical" href="https://knowte.velne.win/posts/shell/bash/bashrc/" />
+    <title>Shell 一些Bash环境配置 | Knowte</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div class="container sidebar-position-left page-post-detail">
+        <div class="headband"></div>
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="header-inner">
+                <div class="site-brand-wrapper">
+                    <div class="site-meta ">
+                        <div class="custom-logo-site-title">
+                            <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">Knowte</span>
         <span class="logo-line-after"><i></i></span>
       </a>
-    </div>
-      
-        <p class="site-subtitle">A learning notes.</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
-    <button>
+                        </div>
+                        <p class="site-subtitle">A learning notes.</p>
+                    </div>
+                    <div class="site-nav-toggle">
+                        <button>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
     </button>
-  </div>
-</div>
-
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+                    </div>
+                </div>
+                <nav class="site-nav">
+                    <ul id="menu" class="menu">
+                        <li class="menu-item menu-item-home">
+                            <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+                        </li>
+                        <li class="menu-item menu-item-categories">
+                            <a href="/categories/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+                        </li>
+                        <li class="menu-item menu-item-archives">
+                            <a href="/archives/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+                        </li>
+                        <li class="menu-item menu-item-tags">
+                            <a href="/tags/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+                        </li>
+                        <li class="menu-item menu-item-about">
+                            <a href="/about/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
             
             关于
           </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-main">
-          <a href="https://velne.win" rel="section">
+                        </li>
+                        <li class="menu-item menu-item-main">
+                            <a href="https://velne.win" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
             
             主站
           </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/shell/bash/bashrc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main" class="main">
+            <div class="main-inner">
+                <div class="content-wrap">
+                    <div id="content" class="content">
+                        <div id="posts" class="posts-expand">
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/shell/bash/bashrc/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Velne Wang">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Knowte">
     </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">Shell 一些Bash环境配置</h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">Shell 一些Bash环境配置</h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T01:00:00+09:00">
+                                            <span class="post-meta-item-text">发表于</span>
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-22T01:00:00+09:00">
                 2018-05-22
               </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
+                                            </span>
+                                            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
+                                            <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                            <span class="post-meta-item-text">分类于</span>
+                                            <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/notes-config/" itemprop="url" rel="index">
                     <span itemprop="name">notes-config</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
+                                            </a>
+                                            </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
                   <i class="fa fa-file-word-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
                   437
                 </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>一些简单的<code>Bash</code>环境配置，<code>alias`</code>PS1`等。</p>
-<a id="more"></a>
-<h1 id="Some-Aliases"><a href="#Some-Aliases" class="headerlink" title="Some Aliases"></a>Some Aliases</h1><p>设置简短的别名<code>alias</code>。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># alias l.='ls -d .* --color=auto'</span></span><br><span class="line"><span class="comment"># --show-control-chars: help showing accented characters</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F --color=auto --show-control-chars'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></span><br><span class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="Prompt-String-One"><a href="#Prompt-String-One" class="headerlink" title="Prompt String One"></a>Prompt String One</h1><p>终端命令提示符<code>PS1</code>。</p>
-<h2 id="Plain-PS1"><a href="#Plain-PS1" class="headerlink" title="Plain PS1"></a>Plain PS1</h2><p>一个简单清晰的提示符，用户名、本地主机名、完整路径以及分行显示权限提示<code>$</code>或<code>#</code>，并且使用不同颜色区分。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]▄[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]▀\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]▌[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]▌\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]█ [\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]█ \$\[\033[0m\] '</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="PS1-with-Git"><a href="#PS1-with-Git" class="headerlink" title="PS1 with Git"></a>PS1 with Git</h2><p>增加显示<code>Git</code>的分支<code>branch</code>，需要安装<code>Git</code>并加载附带的<code>git-prompt.sh</code>文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▀\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▌\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ \[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]█ \[\033[0;32m\]\$\[\033[0m\] '</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="Add-to-bashrc"><a href="#Add-to-bashrc" class="headerlink" title="Add to .bashrc"></a>Add to .bashrc</h1><p>保存至当前用户<code>bash</code>配置<code>~/.bashrc</code>中。</p>
-<h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1><p><a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh" target="_blank" rel="noopener">[git-prompt.sh]</a><br><a href="http://billie66.github.io/TLCL/book/chap14.html" target="_blank" rel="noopener">[TLCL - Prompt]</a></p>
-
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/Operations/" rel="tag"># Operations</a>
-          
-            <a href="/tags/Shell/" rel="tag"># Shell</a>
-          
-            <a href="/tags/Bash/" rel="tag"># Bash</a>
-          
-            <a href="/tags/bashrc/" rel="tag"># bashrc</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/posts/shell/cmd/currentdir/" rel="next" title="CMD 获取路径命令">
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p>一些简单的<code>Bash</code>环境配置，<code>alias`</code>PS1`等。</p>
+                                        <a id="more"></a>
+                                        <h1 id="Some-Aliases"><a href="#Some-Aliases" class="headerlink" title="Some Aliases"></a>Some Aliases</h1>
+                                        <p>设置简短的别名<code>alias</code>。<br>
+                                            <figure class="highlight bash">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line"><span class="comment"># alias l.='ls -d .* --color=auto'</span></span><br><span class="line"><span class="comment"># --show-control-chars: help showing accented characters</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F --color=auto --show-control-chars'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></span><br><span class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <h1 id="Prompt-String-One"><a href="#Prompt-String-One" class="headerlink" title="Prompt String One"></a>Prompt String One</h1>
+                                        <p>终端命令提示符<code>PS1</code>。</p>
+                                        <h2 id="Plain-PS1"><a href="#Plain-PS1" class="headerlink" title="Plain PS1"></a>Plain PS1</h2>
+                                        <p>一个简单清晰的提示符，用户名、本地主机名、完整路径以及分行显示权限提示<code>$</code>或<code>#</code>，并且使用不同颜色区分。<br>
+                                            <figure class="highlight bash">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]▄[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]▀\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]▌[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]▌\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;33m\]█ [\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;33m\]█ \$\[\033[0m\] '</span></span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <h2 id="PS1-with-Git"><a href="#PS1-with-Git" class="headerlink" title="PS1 with Git"></a>PS1 with Git</h2>
+                                        <p>增加显示<code>Git</code>的分支<code>branch</code>，需要安装<code>Git</code>并加载附带的<code>git-prompt.sh</code>文件。<br>
+                                            <figure class="highlight bash">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▀\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▌\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ \[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]█ \[\033[0;32m\]\$\[\033[0m\] '</span></span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <h1 id="Add-to-bashrc"><a href="#Add-to-bashrc" class="headerlink" title="Add to .bashrc"></a>Add to .bashrc</h1>
+                                        <p>保存至当前用户<code>bash</code>配置<code>~/.bashrc</code>中。</p>
+                                        <h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1>
+                                        <p><a href="https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh" target="_blank" rel="noopener">[git-prompt.sh]</a><br><a href="http://billie66.github.io/TLCL/book/chap14.html" target="_blank" rel="noopener">[TLCL - Prompt]</a></p>
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-tags">
+                                            <a href="/tags/Operations/" rel="tag"># Operations</a>
+                                            <a href="/tags/Shell/" rel="tag"># Shell</a>
+                                            <a href="/tags/Bash/" rel="tag"># Bash</a>
+                                            <a href="/tags/bashrc/" rel="tag"># bashrc</a>
+                                        </div>
+                                        <div class="post-nav">
+                                            <div class="post-nav-next post-nav-item">
+                                                <a href="/posts/shell/cmd/currentdir/" rel="next" title="CMD 获取路径命令">
                 <i class="fa fa-chevron-left"></i> CMD 获取路径命令
               </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/security/ssl/ssl-tls-notes/" rel="prev" title="Security SSL/TLS 历史及概述">
+                                            </div>
+                                            <span class="post-nav-divider"></span>
+                                            <div class="post-nav-prev post-nav-item">
+                                                <a href="/posts/security/ssl/ssl-tls-notes/" rel="prev" title="Security SSL/TLS 历史及概述">
                 Security SSL/TLS 历史及概述 <i class="fa fa-chevron-right"></i>
               </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">Velne Wang</p>
-              <p class="site-description motion-element" itemprop="description">Insist on not lazy.</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <div class="post-spread">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-toggle">
+                    <div class="sidebar-toggle-line-wrap">
+                        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+                    </div>
+                </div>
+                <aside id="sidebar" class="sidebar">
+                    <div class="sidebar-inner">
+                        <ul class="sidebar-nav motion-element">
+                            <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                                文章目录
+                            </li>
+                            <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                                站点概览
+                            </li>
+                        </ul>
+                        <section class="site-overview-wrap sidebar-panel">
+                            <div class="site-overview">
+                                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <p class="site-author-name" itemprop="name">Velne Wang</p>
+                                    <p class="site-description motion-element" itemprop="description">Insist on not lazy.</p>
+                                </div>
+                                <nav class="site-state motion-element">
+                                    <div class="site-state-item site-state-posts">
+                                        <a href="/archives/">
               
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-categories">
-                <a href="/categories/index.html">
+                                    </div>
+                                    <div class="site-state-item site-state-categories">
+                                        <a href="/categories/index.html">
                   <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
-              </div>
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                                    </div>
+                                    <div class="site-state-item site-state-tags">
+                                        <a href="/tags/index.html">
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Aliases"><span class="nav-number">1.</span> <span class="nav-text">Some Aliases</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Prompt-String-One"><span class="nav-number">2.</span> <span class="nav-text">Prompt String One</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Plain-PS1"><span class="nav-number">2.1.</span> <span class="nav-text">Plain PS1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS1-with-Git"><span class="nav-number">2.2.</span> <span class="nav-text">PS1 with Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-to-bashrc"><span class="nav-number">3.</span> <span class="nav-text">Add to .bashrc</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Links"><span class="nav-number">4.</span> <span class="nav-text">Links</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love">
+                                    </div>
+                                </nav>
+                            </div>
+                        </section>
+                        <!--noindex-->
+                        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+                            <div class="post-toc">
+                                <div class="post-toc-content">
+                                    <ol class="nav">
+                                        <li class="nav-item nav-level-1"><a class="nav-link" href="#Some-Aliases"><span class="nav-number">1.</span> <span class="nav-text">Some Aliases</span></a></li>
+                                        <li class="nav-item nav-level-1"><a class="nav-link" href="#Prompt-String-One"><span class="nav-number">2.</span> <span class="nav-text">Prompt String One</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-2"><a class="nav-link" href="#Plain-PS1"><span class="nav-number">2.1.</span> <span class="nav-text">Plain PS1</span></a></li>
+                                                <li class="nav-item nav-level-2"><a class="nav-link" href="#PS1-with-Git"><span class="nav-number">2.2.</span> <span class="nav-text">PS1 with Git</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-1"><a class="nav-link" href="#Add-to-bashrc"><span class="nav-number">3.</span> <span class="nav-text">Add to .bashrc</span></a></li>
+                                        <li class="nav-item nav-level-1"><a class="nav-link" href="#Links"><span class="nav-number">4.</span> <span class="nav-text">Links</span></a></li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <!--/noindex-->
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <div class="footer-inner">
+                <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+                    <span class="with-love">
     <i class="fa fa-flask"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Velne Wang</span>
-
-  
-</div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/velnewang/hexo-theme-txen">TxeN</a> v5.1.4</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
+                    <span class="author" itemprop="copyrightHolder">Velne Wang</span>
+                </div>
+                <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+                <span class="post-meta-divider">|</span>
+                <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/velnewang/hexo-theme-txen">TxeN</a> v5.1.4</div>
+            </div>
+        </footer>
+        <div class="back-to-top">
+            <i class="fa fa-arrow-up"></i>
+            <span id="scrollpercent"><span>0</span>%</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+            window.Promise = null;
+        }
+    </script>
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
-  
-
-  
-  
     <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
-  
-
-  
-  
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-  
-
-  
-  
     <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
-  
-
-  
-  
     <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
-  
-
-  
-  
     <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
+    <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 </body>
+
 </html>
