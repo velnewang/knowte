@@ -15,19 +15,19 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
-    <meta name="keywords" content="Operations,Cotinuous,Git," />
-    <meta name="description" content="Git 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。">
-    <meta name="keywords" content="Operations,Cotinuous,Git">
+    <meta name="keywords" content="Operations,Linux,Firewall,firewalld," />
+    <meta name="description" content="Linux firewalld 设置白名单 Zone，设置默认 target=&amp;quot;DROP&amp;quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
+    <meta name="keywords" content="Operations,Linux,Firewall,firewalld">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Git 简单命令">
-    <meta property="og:url" content="https://knowte.velne.win/posts/continuous/git/git-command/index.html">
+    <meta property="og:title" content="Linux 防火墙白名单Zone">
+    <meta property="og:url" content="https://knowte.velne.win/posts/linux/firewalld/customdrop/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="Git 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。">
+    <meta property="og:description" content="Linux firewalld 设置白名单 Zone，设置默认 target=&amp;quot;DROP&amp;quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-08-02T10:29:58.609Z">
+    <meta property="og:updated_time" content="2018-09-16T14:13:38.399Z">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Git 简单命令">
-    <meta name="twitter:description" content="Git 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。">
+    <meta name="twitter:title" content="Linux 防火墙白名单Zone">
+    <meta name="twitter:description" content="Linux firewalld 设置白名单 Zone，设置默认 target=&amp;quot;DROP&amp;quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -70,8 +70,8 @@
             }
         };
     </script>
-    <link rel="canonical" href="https://knowte.velne.win/posts/continuous/git/git-command/" />
-    <title>Git 简单命令 | Knowte</title>
+    <link rel="canonical" href="https://knowte.velne.win/posts/linux/firewalld/customdrop/" />
+    <title>Linux 防火墙白名单Zone | Knowte</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -159,7 +159,7 @@
                         <div id="posts" class="posts-expand">
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/continuous/git/git-command/">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/linux/firewalld/customdrop/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Velne Wang">
       <meta itemprop="description" content="">
@@ -169,7 +169,7 @@
       <meta itemprop="name" content="Knowte">
     </span>
                                     <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">Git 简单命令</h1>
+                                        <h1 class="post-title" itemprop="name headline">Linux 防火墙白名单Zone</h1>
                                         <div class="post-meta">
                                             <span class="post-time">
             
@@ -177,8 +177,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
                                             <span class="post-meta-item-text">发表于</span>
-                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T01:00:00+09:00">
-                2018-07-29
+                                            <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T01:00:00+09:00">
+                2018-09-15
               </time>
                                             </span>
                                             <span class="post-category">
@@ -189,8 +189,8 @@
               </span>
                                             <span class="post-meta-item-text">分类于</span>
                                             <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/notes-cli/" itemprop="url" rel="index">
-                    <span itemprop="name">notes-cli</span>
+                  <a href="/categories/comments-cli/" itemprop="url" rel="index">
+                    <span itemprop="name">comments-cli</span>
                                             </a>
                                             </span>
                                             </span>
@@ -200,31 +200,30 @@
                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                  240
+                  501
                 </span>
                                             </div>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p><code>Git</code> 是一种分布式版本控制系统，可以方便地多人协作，拥有强大的分支管理、安全的分布式、快速的增量更新等特点，配合良好管理进行自动化持续集成等。</p>
+                                        <p>Linux <code>firewalld</code> 设置白名单 <code>Zone</code>，设置默认 <code>target=&quot;DROP&quot;</code>，允许 <code>ssh</code>、<code>http</code>、<code>https</code> 等服务端口、协议或者自定端口等。</p>
                                         <a id="more"></a>
-                                        <h2 id="初始化操作"><a href="#初始化操作" class="headerlink" title="初始化操作"></a>初始化操作</h2>
-                                        <h3 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h3>
-                                        <p>设置用户标识，做到简单的用户识别。<br>详见 <code>git config --help</code>。</p>
-                                        <figure class="highlight sh">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line">$ git config --global user.name <span class="string">"User Name"</span></span><br><span class="line">$ git config --global user.email <span class="string">"email@localhost"</span></span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
-                                        <h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3>
-                                        <p>在空目录下初始化，创建版本库（<code>repository</code>）。</p>
+                                        <h2 id="连通性测试"><a href="#连通性测试" class="headerlink" title="连通性测试"></a>连通性测试</h2>
+                                        <p>检测比如 <code>ICMP</code> 协议、<code>http</code> 服务等。<br>
+                                            <figure class="highlight sh">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># ping -c4 &lt;server_domain_or_ip&gt;</span></span><br><span class="line">PING &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;) 56(84) bytes of data.</span><br><span class="line">64 bytes from &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;): icmp_seq=1 ttl=51 time=23 ms</span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># curl &lt;your_server_domain_or_ip&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <h2 id="新建自定义区域ZONE"><a href="#新建自定义区域ZONE" class="headerlink" title="新建自定义区域ZONE"></a>新建自定义区域ZONE</h2>
                                         <figure class="highlight sh">
                                             <table>
                                                 <tr>
@@ -232,76 +231,124 @@
                                                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">$ mkdir repo</span><br><span class="line">$ <span class="built_in">cd</span> repo</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> ~/repo/.git/</span><br></pre>
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --permanent --new-zone=customdrop</span></span><br><span class="line">success</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --permanent --get-zones</span></span><br><span class="line">block customdrop dmz drop external home internal public trusted work</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h2 id="提交节点操作"><a href="#提交节点操作" class="headerlink" title="提交节点操作"></a>提交节点操作</h2>
-                                        <h3 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h3>
-                                        <p>查看仓库状态。</p>
-                                        <h3 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h3>
-                                        <p>将文件添加到版本库。</p>
+                                        <h2 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h2>
+                                        <p><code>/etc/firewalld/zones/customdrop.xml</code></p>
                                         <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">$ <span class="built_in">echo</span> <span class="string">"some text"</span> &gt; file.txt  <span class="comment"># 示例，新建一个文件</span></span><br><span class="line">$ git add file.txt</span><br><span class="line">$ git add .  <span class="comment"># . 表示全部</span></span><br></pre>
+                                                        <pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?&gt;</span><br><span class="line">&lt;zone target=<span class="string">"DROP"</span>&gt;</span><br><span class="line">  &lt;short&gt;CustomDrop&lt;/short&gt;</span><br><span class="line">  &lt;description&gt;Only specific services or ports are allowed.Unsolicited incoming network packets are dropped. Incoming packets that are related to outgoing network connections are accepted. Outgoing network connections are allowed.&lt;/description&gt;</span><br><span class="line">  &lt;service name=<span class="string">"ssh"</span>/&gt;</span><br><span class="line">  &lt;service name=<span class="string">"http"</span>/&gt;</span><br><span class="line">  &lt;service name=<span class="string">"https"</span>/&gt;</span><br><span class="line">&lt;/zone&gt;</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h3 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h3>
-                                        <p>提交记录，相当于保存项目快照。</p>
+                                        <h2 id="热载入"><a href="#热载入" class="headerlink" title="热载入"></a>热载入</h2>
                                         <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">git commit -m <span class="string">"comments"</span></span><br></pre>
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --reload</span></span><br><span class="line">success</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --permanent --get-zones</span></span><br><span class="line">block customdrop dmz drop external home internal public trusted work</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --info-zone=customdrop</span></span><br><span class="line">customdrop</span><br><span class="line">  target: DROP</span><br><span class="line">  icmp-block-inversion: no</span><br><span class="line">  interfaces:</span><br><span class="line">  sources:</span><br><span class="line">  services: ssh http https</span><br><span class="line">  ports:</span><br><span class="line">  protocols:</span><br><span class="line">  masquerade: no</span><br><span class="line">  forward-ports:</span><br><span class="line">  <span class="built_in">source</span>-ports:</span><br><span class="line">  icmp-blocks:</span><br><span class="line">  rich rules:</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h3 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h3>
-                                        <p>按行比较文件与版本库历史中文件的不同。</p>
+                                        <h2 id="更改默认ZONE"><a href="#更改默认ZONE" class="headerlink" title="更改默认ZONE"></a>更改默认ZONE</h2>
                                         <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">$ git diff file.txt</span><br></pre>
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --set-default-zone=customdrop</span></span><br><span class="line">success</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --get-default-zone</span></span><br><span class="line">customdrop</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --info-zone=customdrop</span></span><br><span class="line">customdrop (active)</span><br><span class="line">  target: DROP</span><br><span class="line">  icmp-block-inversion: no</span><br><span class="line">  interfaces: ens32</span><br><span class="line">  sources:</span><br><span class="line">  services: ssh http https</span><br><span class="line">  ports:</span><br><span class="line">  protocols:</span><br><span class="line">  masquerade: no</span><br><span class="line">  forward-ports:</span><br><span class="line">  <span class="built_in">source</span>-ports:</span><br><span class="line">  icmp-blocks:</span><br><span class="line">  rich rules:</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2>
-                                        <h2 id="TODO"><a href="#TODO" class="headerlink" title="//TODO"></a>//TODO</h2>
+                                        <p>确保当前网卡已经分配到防火墙区域。<br>
+                                            <figure class="highlight sh">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --get-zone-of-interface="ens32"</span></span><br><span class="line">customdrop</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --zone=customzoen--change-interface=&lt;interface&gt;</span></span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <p>或者直接指定网卡所在防火墙区域，不指定则默认为激活区域。<br>
+                                            <figure class="highlight sh">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># cat etc/sysconfig/network-scripts/ifcfg-&lt;interface&gt; | grep "ZONE="</span></span><br><span class="line">ZONE=customdrop</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>
+                                        <p>在区域规则生效后，已经无法 <code>ping</code> 通。<br>
+                                            <figure class="highlight sh">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># ping -c4 &lt;server_domain_or_ip&gt;</span></span><br><span class="line">PING &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;) 56(84) bytes of data.</span><br><span class="line"></span><br><span class="line">--- host.velne.win ping statistics ---</span><br><span class="line">4 packets transmitted, 0 received, 100% packet loss, time 3002ms</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                        <p>检查特定服务端口。<br>
+                                            <figure class="highlight sh">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># curl &lt;your_server_domain_or_ip&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
                                             <a href="/tags/Operations/" rel="tag"># Operations</a>
-                                            <a href="/tags/Cotinuous/" rel="tag"># Cotinuous</a>
-                                            <a href="/tags/Git/" rel="tag"># Git</a>
+                                            <a href="/tags/Linux/" rel="tag"># Linux</a>
+                                            <a href="/tags/Firewall/" rel="tag"># Firewall</a>
+                                            <a href="/tags/firewalld/" rel="tag"># firewalld</a>
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/lang/java/parameters/" rel="next" title="JVM HotSpot 虚拟机参数说明">
-                <i class="fa fa-chevron-left"></i> JVM HotSpot 虚拟机参数说明
+                                                <a href="/posts/linux/filesystem/file-permission/" rel="next" title="Linux 文件权限">
+                <i class="fa fa-chevron-left"></i> Linux 文件权限
               </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/continuous/git/graph-script/" rel="prev" title="Git 简单维护命令">
-                Git 简单维护命令 <i class="fa fa-chevron-right"></i>
-              </a>
                                             </div>
                                         </div>
                                     </footer>
@@ -363,22 +410,12 @@
                             <div class="post-toc">
                                 <div class="post-toc-content">
                                     <ol class="nav">
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#初始化操作"><span class="nav-text">初始化操作</span></a>
-                                            <ol class="nav-child">
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-config"><span class="nav-text">git config</span></a></li>
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-init"><span class="nav-text">git init</span></a></li>
-                                            </ol>
-                                        </li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#提交节点操作"><span class="nav-text">提交节点操作</span></a>
-                                            <ol class="nav-child">
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-status"><span class="nav-text">git status</span></a></li>
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-add"><span class="nav-text">git add</span></a></li>
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-commit"><span class="nav-text">git commit</span></a></li>
-                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#git-diff"><span class="nav-text">git diff</span></a></li>
-                                            </ol>
-                                        </li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#分支操作"><span class="nav-text">分支操作</span></a></li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#TODO"><span class="nav-text">//TODO</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#连通性测试"><span class="nav-text">连通性测试</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#新建自定义区域ZONE"><span class="nav-text">新建自定义区域ZONE</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#编辑配置文件"><span class="nav-text">编辑配置文件</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#热载入"><span class="nav-text">热载入</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#更改默认ZONE"><span class="nav-text">更改默认ZONE</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-text">测试</span></a></li>
                                     </ol>
                                 </div>
                             </div>
