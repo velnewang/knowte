@@ -24,7 +24,7 @@
     <meta property="og:site_name" content="Knowte">
     <meta property="og:description" content="Linux firewalld 说明。">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-09-05T02:27:39.837Z">
+    <meta property="og:updated_time" content="2019-04-21T08:34:00.384Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Linux 防火墙命令说明">
     <meta name="twitter:description" content="Linux firewalld 说明。">
@@ -186,7 +186,7 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    141
+                                                    324
                                                 </span>
                                             </div>
                                         </div>
@@ -194,19 +194,49 @@
                                     <div class="post-body" itemprop="articleBody">
                                         <p>Linux <code>firewalld</code> 说明。</p>
                                         <a id="more"></a>
-                                        <h2 id="Scripts"><a href="#Scripts" class="headerlink" title="Scripts"></a>Scripts</h2>
+                                        <h2 id="通过firewalld管理ipset"><a href="#通过firewalld管理ipset" class="headerlink" title="通过firewalld管理ipset"></a>通过firewalld管理ipset</h2>
+                                        <p><code>firewalld</code>默认的<code>ipset</code>配置路径为<code>/etc/firewalld/ipsets</code>。</p>
                                         <figure class="highlight sh">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"><span class="comment"># _firewall.sh</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [[ <span class="variable">$SSH_PRP</span> = <span class="string">"load"</span> ]]</span><br><span class="line">  <span class="keyword">then</span></span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    firewall-cmd --permanent --service=ssh --add-port=<span class="variable">$SSH_PORT_NEW</span></span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    firewall-cmd --permanent --service=ssh --remove-port=<span class="variable">$SSH_PORT_DEFAULT</span></span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    <span class="comment"># systemctl restart firewalld</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre>
+                                                        <pre><span class="line"><span class="comment"># 查看ipset</span></span><br><span class="line">firewall-cmd --info-ipset=[ipset_name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增删ipset集合</span></span><br><span class="line">firewall-cmd --permanent --new-ipset=[ipset_name] --<span class="built_in">type</span>=[<span class="built_in">type</span>] --option</span><br><span class="line"><span class="comment"># –option=family=inet6</span></span><br><span class="line">firewall-cmd --permanent --delete-ipset=[ipset_name]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增删ipset集合条目</span></span><br><span class="line">firewall-cmd --permanent --ipset=[ipset_name] --add-entry=[xxx.xxx.xxx.xxx]</span><br><span class="line">firewall-cmd --permanent --ipset=[ipset_name] --remove-entry=[xxx.xxx.xxx.xxx]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 持久化设置需要重新载入生效</span></span><br><span class="line">firewall-cmd --reload</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
+                                        <p><a href="https://firewalld.org/documentation/man-pages/firewalld.ipset" target="_blank" rel="noopener">man-pages: firewalld.ipset</a><br><a href="https://manpages.ubuntu.com/manpages/xenial/man5/firewalld.ipset.5.html" target="_blank" rel="noopener">ubuntu: firewalld.ipset</a></p>
+                                        <h2 id="防火墙绑定源source与区域zone"><a href="#防火墙绑定源source与区域zone" class="headerlink" title="防火墙绑定源source与区域zone"></a>防火墙绑定源source与区域zone</h2>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">firewall-cmd --permanent --zone=<span class="string">"drop"</span> --add-source=<span class="string">"xxx.xxx.xxx.xxx"</span></span><br><span class="line">firewall-cmd --permanent --zone=<span class="string">"drop"</span> --add-source=<span class="string">"xxx.xxx.xxx.xxx/24"</span></span><br><span class="line">firewall-cmd --permanent --zone=<span class="string">"drop"</span> --add-source=ipset=[ipset_name]</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <h2 id="富规则"><a href="#富规则" class="headerlink" title="富规则"></a>富规则</h2>
+                                        <p><code></code>sh<br>firewall-cmd –add-rich-rule=’rule source ipset=blacklist drop’<br>
+                                            <figure class="highlight plain">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Scripts</span><br><span class="line"></span><br><span class="line">```sh</span><br><span class="line">#!/bin/sh</span><br><span class="line"># _firewall.sh</span><br><span class="line"></span><br><span class="line">if [[ $SSH_PRP = &quot;load&quot; ]]</span><br><span class="line">  then</span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    firewall-cmd --permanent --service=ssh --add-port=$SSH_PORT_NEW</span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    firewall-cmd --permanent --service=ssh --remove-port=$SSH_PORT_DEFAULT</span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    # systemctl restart firewalld</span><br><span class="line">fi</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
                                         <h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2>
                                         <p>start # systemctl start firewalld<br>status # systemctl status firewalld 或者 firewall-cmd –state<br>disable # systemctl disable firewalld<br>stop # systemctl stop firewalld</p>
                                         <h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2>
@@ -223,7 +253,7 @@
                                             </table>
                                         </figure>
                                         <h2 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h2>
-                                        <p><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html#sec-Introduction_to_firewalld" target="_blank" rel="noopener">firewalld in redhat</a></p>
+                                        <p><a href="https://firewalld.org/documentation/man-pages/firewall-cmd.html" target="_blank" rel="noopener">firewalld.org</a><br><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html#sec-Introduction_to_firewalld" target="_blank" rel="noopener">firewalld in redhat</a></p>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
@@ -303,7 +333,9 @@
                             <div class="post-toc">
                                 <div class="post-toc-content">
                                     <ol class="nav">
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Scripts"><span class="nav-text">Scripts</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#通过firewalld管理ipset"><span class="nav-text">通过firewalld管理ipset</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙绑定源source与区域zone"><span class="nav-text">防火墙绑定源source与区域zone</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#富规则"><span class="nav-text">富规则</span></a></li>
                                         <li class="nav-item nav-level-2"><a class="nav-link" href="#Status"><span class="nav-text">Status</span></a></li>
                                         <li class="nav-item nav-level-2"><a class="nav-link" href="#Config"><span class="nav-text">Config</span></a></li>
                                         <li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-text">Links</span></a></li>

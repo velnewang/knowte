@@ -16,18 +16,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="nginx," />
-    <meta name="description" content="Debian123apt install nginx -yservice nginx start# systemctl start nginx Centos1234rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpmyum install nginx -">
+    <meta name="description" content="DebianInstall the prerequisites: 1sudo apt install curl gnupg2 ca-certificates lsb-release To set up the apt repository for stable nginx packages, run the following command: 12echo &quot;deb http://nginx.o">
     <meta name="keywords" content="nginx">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Nginx 安装">
     <meta property="og:url" content="https://knowte.velne.win/posts/server/nginx/install/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="Debian123apt install nginx -yservice nginx start# systemctl start nginx Centos1234rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpmyum install nginx -">
+    <meta property="og:description" content="DebianInstall the prerequisites: 1sudo apt install curl gnupg2 ca-certificates lsb-release To set up the apt repository for stable nginx packages, run the following command: 12echo &quot;deb http://nginx.o">
     <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2019-03-14T00:07:32.346Z">
+    <meta property="og:updated_time" content="2019-04-21T08:46:34.029Z">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nginx 安装">
-    <meta name="twitter:description" content="Debian123apt install nginx -yservice nginx start# systemctl start nginx Centos1234rpm -Uvh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpmyum install nginx -">
+    <meta name="twitter:description" content="DebianInstall the prerequisites: 1sudo apt install curl gnupg2 ca-certificates lsb-release To set up the apt repository for stable nginx packages, run the following command: 12echo &quot;deb http://nginx.o">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -186,13 +186,104 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    48
+                                                    240
                                                 </span>
                                             </div>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
                                         <h2 id="Debian"><a href="#Debian" class="headerlink" title="Debian"></a>Debian</h2>
+                                        <p>Install the prerequisites:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">sudo apt install curl gnupg2 ca-certificates lsb-release</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>To set up the apt repository for stable nginx packages, run the following command:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb http://nginx.org/packages/debian `lsb_release -cs` nginx"</span> \</span><br><span class="line">    | sudo tee /etc/apt/sources.list.d/nginx.list</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>If you would like to use mainline nginx packages, run the following command instead:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"><span class="built_in">echo</span> <span class="string">"deb http://nginx.org/packages/mainline/debian `lsb_release -cs` nginx"</span> \</span><br><span class="line">    | sudo tee /etc/apt/sources.list.d/nginx.list</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>Next, import an official nginx signing key so apt could verify the packages authenticity:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">curl -fsSL https://nginx.org/keys/nginx_signing.key | sudo apt-key add -</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>Verify that you now have the proper key:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">sudo apt-key fingerprint ABF5BD827BD9BF62</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>The output should contain the full fingerprint 573B FD6B 3D8F BC64 1079 A6AB ABF5 BD82 7BD9 BF62 as follows:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">pub   rsa2048 2011-08-19 [SC] [expires: 2024-06-14]</span><br><span class="line">      573B FD6B 3D8F BC64 1079  A6AB ABF5 BD82 7BD9 BF62</span><br><span class="line">uid   [ unknown] nginx signing key &lt;signing-key@nginx.com&gt;</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>To install nginx, run the following commands:</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install nginx</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <figure class="highlight sh">
                                             <table>
                                                 <tr>
