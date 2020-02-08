@@ -146,6 +146,260 @@
                         <section id="posts" class="posts-expand">
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/ide/eclipse/launch/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <meta itemprop="name" content="Velne Wang">
+                                        <meta itemprop="description" content="">
+                                        <meta itemprop="image" content="/images/avatar.gif">
+                                    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                        <meta itemprop="name" content="Knowte">
+                                    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">
+                                            <a class="post-title-link" href="/posts/ide/eclipse/launch/" itemprop="url">Eclipse 启动脚本</a></h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-calendar-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">发表于</span>
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T00:00:00+08:00">
+                                                    2018-07-08
+                                                </time>
+                                            </span>
+                                            <span class="post-category">
+                                                <span class="post-meta-divider">|</span>
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-folder-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/notes-script/" itemprop="url" rel="index">
+                                                        <span itemprop="name">notes-script</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-file-word-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
+                                                    16
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p><code>Eclipse</code>启动脚本。<br>
+                                            <figure class="highlight cmd">
+                                                <table>
+                                                    <tr>
+                                                        <td class="gutter">
+                                                            <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                        </td>
+                                                        <td class="code">
+                                                            <pre><span class="line">:: eclipse.bat</span><br><span class="line"><span class="built_in">start</span> "" eclipse --launcher.ini %~dp0\eclipse.ini</span><br></pre>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </figure>
+                                        </p>
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-eof"></div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/lang/java/javac/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <meta itemprop="name" content="Velne Wang">
+                                        <meta itemprop="description" content="">
+                                        <meta itemprop="image" content="/images/avatar.gif">
+                                    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                        <meta itemprop="name" content="Knowte">
+                                    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">
+                                            <a class="post-title-link" href="/posts/lang/java/javac/" itemprop="url">Java Compiler 编译器命令</a></h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-calendar-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">发表于</span>
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-04T00:00:00+08:00">
+                                                    2018-07-04
+                                                </time>
+                                            </span>
+                                            <span class="post-category">
+                                                <span class="post-meta-divider">|</span>
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-folder-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/notes-cli/" itemprop="url" rel="index">
+                                                        <span itemprop="name">notes-cli</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-file-word-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
+                                                    214
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p><code>JDK</code>标准工具中包含<code>javac</code>编译器，而<code>Eclipse</code>开发工具<code>JDT</code>(Eclipse Java development tools)中默认使用的是其自身实现的兼容编译器<code>ECJ</code>(Eclipse Compiler for Java)。而且由于<code>JDT</code>基于<code>ECJ</code>,所以在<code>Eclipse</code>中并不能方便地切换编译器。</p>
+                                        <!--noindex-->
+                                        <div class="post-button text-center">
+                                            <a class="btn" href="/posts/lang/java/javac/#more" rel="contents">
+                                                阅读全文 &raquo;
+                                            </a>
+                                        </div>
+                                        <!--/noindex-->
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-eof"></div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/lang/java/version-history/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <meta itemprop="name" content="Velne Wang">
+                                        <meta itemprop="description" content="">
+                                        <meta itemprop="image" content="/images/avatar.gif">
+                                    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                        <meta itemprop="name" content="Knowte">
+                                    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">
+                                            <a class="post-title-link" href="/posts/lang/java/version-history/" itemprop="url">Java 版本历史及特性</a></h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-calendar-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">发表于</span>
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-16T00:00:00+08:00">
+                                                    2018-06-16
+                                                </time>
+                                            </span>
+                                            <span class="post-category">
+                                                <span class="post-meta-divider">|</span>
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-folder-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/notes-doc/" itemprop="url" rel="index">
+                                                        <span itemprop="name">notes-doc</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-file-word-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
+                                                    37
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p><code>Java</code>发行版本主要升级历史及特性。<br>目前的长期支持版本<code>LTS</code>是<code>Java 8</code>，后续<code>LTS</code>版本将是<code>Java 11</code>。</p>
+                                        <!--noindex-->
+                                        <div class="post-button text-center">
+                                            <a class="btn" href="/posts/lang/java/version-history/#more" rel="contents">
+                                                阅读全文 &raquo;
+                                            </a>
+                                        </div>
+                                        <!--/noindex-->
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-eof"></div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/lang/java/releases-explained/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <meta itemprop="name" content="Velne Wang">
+                                        <meta itemprop="description" content="">
+                                        <meta itemprop="image" content="/images/avatar.gif">
+                                    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                        <meta itemprop="name" content="Knowte">
+                                    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">
+                                            <a class="post-title-link" href="/posts/lang/java/releases-explained/" itemprop="url">Java 发行版本解释</a></h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-calendar-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">发表于</span>
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T00:00:00+08:00">
+                                                    2018-06-15
+                                                </time>
+                                            </span>
+                                            <span class="post-category">
+                                                <span class="post-meta-divider">|</span>
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-folder-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/notes-doc/" itemprop="url" rel="index">
+                                                        <span itemprop="name">notes-doc</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-file-word-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
+                                                    279
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p>关于<code>Java</code>发行版本<code>release</code>的说明，包括版本<code>version</code>的长期支持版本<code>long-term-support (LTS)</code>和快速版本<code>rapid</code>及补丁<code>patch</code>的关键补丁更新版本<code>Critical Patch Update (CPU)</code>和补丁集更新<code>Patch Set Update (PSU)</code>。</p>
+                                        <!--noindex-->
+                                        <div class="post-button text-center">
+                                            <a class="btn" href="/posts/lang/java/releases-explained/#more" rel="contents">
+                                                阅读全文 &raquo;
+                                            </a>
+                                        </div>
+                                        <!--/noindex-->
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-eof"></div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
                                     <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/ide/eclipse/config/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                                         <meta itemprop="name" content="Velne Wang">
@@ -208,68 +462,6 @@
                             </article>
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/server/tomcat/reason_phrases/">
-                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                        <meta itemprop="name" content="Velne Wang">
-                                        <meta itemprop="description" content="">
-                                        <meta itemprop="image" content="/images/avatar.gif">
-                                    </span>
-                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                                        <meta itemprop="name" content="Knowte">
-                                    </span>
-                                    <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">
-                                            <a class="post-title-link" href="/posts/server/tomcat/reason_phrases/" itemprop="url">Tomcat HTTP状态码描述</a></h1>
-                                        <div class="post-meta">
-                                            <span class="post-time">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-calendar-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">发表于</span>
-                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T00:00:00+08:00">
-                                                    2018-06-12
-                                                </time>
-                                            </span>
-                                            <span class="post-category">
-                                                <span class="post-meta-divider">|</span>
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-folder-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">分类于</span>
-                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/notes-doc/" itemprop="url" rel="index">
-                                                        <span itemprop="name">notes-doc</span>
-                                                    </a>
-                                                </span>
-                                            </span>
-                                            <div class="post-wordcount">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-file-word-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">字数统计&#58;</span>
-                                                <span title="字数统计">
-                                                    188
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="post-body" itemprop="articleBody">
-                                        <p><code>Tomcat</code>从<code>8.5.0</code>版本开始，<code>HTTP</code>响应中不再发送<code>STATUS_MSG</code>状态码说明<a href="https://tomcat.apache.org/tomcat-8.5-doc/changelog.html#Tomcat_8.5.0_(markt)/Coyote" target="_blank" rel="noopener">changelog_Tomcat_8.5.0_Coyote</a>。</p>
-                                        <!--noindex-->
-                                        <div class="post-button text-center">
-                                            <a class="btn" href="/posts/server/tomcat/reason_phrases/#more" rel="contents">
-                                                阅读全文 &raquo;
-                                            </a>
-                                        </div>
-                                        <!--/noindex-->
-                                    </div>
-                                    <footer class="post-footer">
-                                        <div class="post-eof"></div>
-                                    </footer>
-                                </div>
-                            </article>
-                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                                <div class="post-block">
                                     <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/user/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                                         <meta itemprop="name" content="Velne Wang">
@@ -320,6 +512,68 @@
                                         <!--noindex-->
                                         <div class="post-button text-center">
                                             <a class="btn" href="/posts/database/mysql/user/#more" rel="contents">
+                                                阅读全文 &raquo;
+                                            </a>
+                                        </div>
+                                        <!--/noindex-->
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-eof"></div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/server/tomcat/reason_phrases/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <meta itemprop="name" content="Velne Wang">
+                                        <meta itemprop="description" content="">
+                                        <meta itemprop="image" content="/images/avatar.gif">
+                                    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                        <meta itemprop="name" content="Knowte">
+                                    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">
+                                            <a class="post-title-link" href="/posts/server/tomcat/reason_phrases/" itemprop="url">Tomcat HTTP状态码描述</a></h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-calendar-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">发表于</span>
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-12T00:00:00+08:00">
+                                                    2018-06-12
+                                                </time>
+                                            </span>
+                                            <span class="post-category">
+                                                <span class="post-meta-divider">|</span>
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-folder-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/notes-doc/" itemprop="url" rel="index">
+                                                        <span itemprop="name">notes-doc</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-file-word-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
+                                                    188
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <p><code>Tomcat</code>从<code>8.5.0</code>版本开始，<code>HTTP</code>响应中不再发送<code>STATUS_MSG</code>状态码说明<a href="https://tomcat.apache.org/tomcat-8.5-doc/changelog.html#Tomcat_8.5.0_(markt)/Coyote" target="_blank" rel="noopener">changelog_Tomcat_8.5.0_Coyote</a>。</p>
+                                        <!--noindex-->
+                                        <div class="post-button text-center">
+                                            <a class="btn" href="/posts/server/tomcat/reason_phrases/#more" rel="contents">
                                                 阅读全文 &raquo;
                                             </a>
                                         </div>
@@ -518,254 +772,6 @@
                                     </footer>
                                 </div>
                             </article>
-                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                                <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/init/">
-                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                        <meta itemprop="name" content="Velne Wang">
-                                        <meta itemprop="description" content="">
-                                        <meta itemprop="image" content="/images/avatar.gif">
-                                    </span>
-                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                                        <meta itemprop="name" content="Knowte">
-                                    </span>
-                                    <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">
-                                            <a class="post-title-link" href="/posts/database/mysql/init/" itemprop="url">MySQL 初始服务脚本</a></h1>
-                                        <div class="post-meta">
-                                            <span class="post-time">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-calendar-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">发表于</span>
-                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T00:00:00+08:00">
-                                                    2018-06-02
-                                                </time>
-                                            </span>
-                                            <span class="post-category">
-                                                <span class="post-meta-divider">|</span>
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-folder-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">分类于</span>
-                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/notes-script/" itemprop="url" rel="index">
-                                                        <span itemprop="name">notes-script</span>
-                                                    </a>
-                                                </span>
-                                            </span>
-                                            <div class="post-wordcount">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-file-word-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">字数统计&#58;</span>
-                                                <span title="字数统计">
-                                                    230
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="post-body" itemprop="articleBody">
-                                        <p>在<code>MySQL</code>服务端，初始化数据文件夹、安装服务、卸载服务、启动客户端等的命令、参数及脚本。</p>
-                                        <!--noindex-->
-                                        <div class="post-button text-center">
-                                            <a class="btn" href="/posts/database/mysql/init/#more" rel="contents">
-                                                阅读全文 &raquo;
-                                            </a>
-                                        </div>
-                                        <!--/noindex-->
-                                    </div>
-                                    <footer class="post-footer">
-                                        <div class="post-eof"></div>
-                                    </footer>
-                                </div>
-                            </article>
-                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                                <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/database/mysql/profile/">
-                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                        <meta itemprop="name" content="Velne Wang">
-                                        <meta itemprop="description" content="">
-                                        <meta itemprop="image" content="/images/avatar.gif">
-                                    </span>
-                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                                        <meta itemprop="name" content="Knowte">
-                                    </span>
-                                    <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">
-                                            <a class="post-title-link" href="/posts/database/mysql/profile/" itemprop="url">MySQL 启动配置</a></h1>
-                                        <div class="post-meta">
-                                            <span class="post-time">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-calendar-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">发表于</span>
-                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-01T00:00:00+08:00">
-                                                    2018-06-01
-                                                </time>
-                                            </span>
-                                            <span class="post-category">
-                                                <span class="post-meta-divider">|</span>
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-folder-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">分类于</span>
-                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/notes-config/" itemprop="url" rel="index">
-                                                        <span itemprop="name">notes-config</span>
-                                                    </a>
-                                                </span>
-                                            </span>
-                                            <div class="post-wordcount">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-file-word-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">字数统计&#58;</span>
-                                                <span title="字数统计">
-                                                    206
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="post-body" itemprop="articleBody">
-                                        <p><code>MySQL</code>的配置文件<code>my.ini</code>。</p>
-                                        <!--noindex-->
-                                        <div class="post-button text-center">
-                                            <a class="btn" href="/posts/database/mysql/profile/#more" rel="contents">
-                                                阅读全文 &raquo;
-                                            </a>
-                                        </div>
-                                        <!--/noindex-->
-                                    </div>
-                                    <footer class="post-footer">
-                                        <div class="post-eof"></div>
-                                    </footer>
-                                </div>
-                            </article>
-                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                                <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/shell/bash/bashback/">
-                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                        <meta itemprop="name" content="Velne Wang">
-                                        <meta itemprop="description" content="">
-                                        <meta itemprop="image" content="/images/avatar.gif">
-                                    </span>
-                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                                        <meta itemprop="name" content="Knowte">
-                                    </span>
-                                    <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">
-                                            <a class="post-title-link" href="/posts/shell/bash/bashback/" itemprop="url">Bash 返回到原路径</a></h1>
-                                        <div class="post-meta">
-                                            <span class="post-time">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-calendar-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">发表于</span>
-                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T00:00:00+08:00">
-                                                    2018-05-31
-                                                </time>
-                                            </span>
-                                            <span class="post-category">
-                                                <span class="post-meta-divider">|</span>
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-folder-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">分类于</span>
-                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/notes-script/" itemprop="url" rel="index">
-                                                        <span itemprop="name">notes-script</span>
-                                                    </a>
-                                                </span>
-                                            </span>
-                                            <div class="post-wordcount">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-file-word-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">字数统计&#58;</span>
-                                                <span title="字数统计">
-                                                    169
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="post-body" itemprop="articleBody">
-                                        <p>在<code>Bash</code>中，运行指定路径<code>BASE_DIR</code>命令，结束时返回原路径<code>BACK_DIR</code>。<br>可以实现配置和脚本分离。</p>
-                                        <!--noindex-->
-                                        <div class="post-button text-center">
-                                            <a class="btn" href="/posts/shell/bash/bashback/#more" rel="contents">
-                                                阅读全文 &raquo;
-                                            </a>
-                                        </div>
-                                        <!--/noindex-->
-                                    </div>
-                                    <footer class="post-footer">
-                                        <div class="post-eof"></div>
-                                    </footer>
-                                </div>
-                            </article>
-                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-                                <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/shell/cmd/cmdback/">
-                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-                                        <meta itemprop="name" content="Velne Wang">
-                                        <meta itemprop="description" content="">
-                                        <meta itemprop="image" content="/images/avatar.gif">
-                                    </span>
-                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-                                        <meta itemprop="name" content="Knowte">
-                                    </span>
-                                    <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">
-                                            <a class="post-title-link" href="/posts/shell/cmd/cmdback/" itemprop="url">CMD 返回到原路径</a></h1>
-                                        <div class="post-meta">
-                                            <span class="post-time">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-calendar-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">发表于</span>
-                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T00:00:00+08:00">
-                                                    2018-05-31
-                                                </time>
-                                            </span>
-                                            <span class="post-category">
-                                                <span class="post-meta-divider">|</span>
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-folder-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">分类于</span>
-                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/notes-script/" itemprop="url" rel="index">
-                                                        <span itemprop="name">notes-script</span>
-                                                    </a>
-                                                </span>
-                                            </span>
-                                            <div class="post-wordcount">
-                                                <span class="post-meta-item-icon">
-                                                    <i class="fa fa-file-word-o"></i>
-                                                </span>
-                                                <span class="post-meta-item-text">字数统计&#58;</span>
-                                                <span title="字数统计">
-                                                    151
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </header>
-                                    <div class="post-body" itemprop="articleBody">
-                                        <p>在<code>Windows</code>下，运行指定路径<code>BASE_DIR</code>命令，结束时返回原路径<code>BACK_DIR</code>。<br>可以实现配置和脚本分离。</p>
-                                        <!--noindex-->
-                                        <div class="post-button text-center">
-                                            <a class="btn" href="/posts/shell/cmd/cmdback/#more" rel="contents">
-                                                阅读全文 &raquo;
-                                            </a>
-                                        </div>
-                                        <!--/noindex-->
-                                    </div>
-                                    <footer class="post-footer">
-                                        <div class="post-eof"></div>
-                                    </footer>
-                                </div>
-                            </article>
                         </section>
                         <nav class="pagination">
                             <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
@@ -790,7 +796,7 @@
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
                                         <a href="/archives/">
-                                            <span class="site-state-item-count">46</span>
+                                            <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
@@ -802,7 +808,7 @@
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">64</span>
+                                            <span class="site-state-item-count">66</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>
