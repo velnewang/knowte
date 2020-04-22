@@ -16,18 +16,22 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="Operations,Container,Docker,Java,JVM,HotSpot VM," />
-    <meta name="description" content="在虚拟化技术中，容器并不像虚拟机一样加载、引导操作系统内核，而是使用命名空间 namespace隔离系统环境，使用cgroups限制资源使用。 Docker利用cgroups实现资源限制，并未完全隔离原生资源信息，比如/proc /sys等资源，所以需要容器内程序支持cgroups以适配容器。当容器使用超限内存时，会抛出OOME(Out Of Memory Exception：内存异常)，并且会可">
-    <meta name="keywords" content="Operations,Container,Docker,Java,JVM,HotSpot VM">
+    <meta name="description" content="在虚拟化技术中，容器并不像虚拟机一样加载、引导操作系统内核，而是使用命名空间 namespace隔离系统环境，使用cgroups限制资源使用。 Docker利用cgroups实现资源限制，并未完全隔离原生资源信息，比如&#x2F;proc &#x2F;sys等资源，所以需要容器内程序支持cgroups以适配容器。当容器使用超限内存时，会抛出OOME(Out Of Memory Exception：内存异常)，并且会可">
     <meta property="og:type" content="article">
     <meta property="og:title" content="JVM 对容器的支持">
     <meta property="og:url" content="https://knowte.velne.win/posts/lang/java/container-support/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="在虚拟化技术中，容器并不像虚拟机一样加载、引导操作系统内核，而是使用命名空间 namespace隔离系统环境，使用cgroups限制资源使用。 Docker利用cgroups实现资源限制，并未完全隔离原生资源信息，比如/proc /sys等资源，所以需要容器内程序支持cgroups以适配容器。当容器使用超限内存时，会抛出OOME(Out Of Memory Exception：内存异常)，并且会可">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2020-01-15T08:04:44.124Z">
+    <meta property="og:description" content="在虚拟化技术中，容器并不像虚拟机一样加载、引导操作系统内核，而是使用命名空间 namespace隔离系统环境，使用cgroups限制资源使用。 Docker利用cgroups实现资源限制，并未完全隔离原生资源信息，比如&#x2F;proc &#x2F;sys等资源，所以需要容器内程序支持cgroups以适配容器。当容器使用超限内存时，会抛出OOME(Out Of Memory Exception：内存异常)，并且会可">
+    <meta property="article:published_time" content="2020-01-14T16:00:00.000Z">
+    <meta property="article:modified_time" content="2020-01-15T08:04:44.124Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="Operations">
+    <meta property="article:tag" content="Container">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="JVM">
+    <meta property="article:tag" content="HotSpot VM">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="JVM 对容器的支持">
-    <meta name="twitter:description" content="在虚拟化技术中，容器并不像虚拟机一样加载、引导操作系统内核，而是使用命名空间 namespace隔离系统环境，使用cgroups限制资源使用。 Docker利用cgroups实现资源限制，并未完全隔离原生资源信息，比如/proc /sys等资源，所以需要容器内程序支持cgroups以适配容器。当容器使用超限内存时，会抛出OOME(Out Of Memory Exception：内存异常)，并且会可">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -72,6 +76,7 @@
     </script>
     <link rel="canonical" href="https://knowte.velne.win/posts/lang/java/container-support/" />
     <title>JVM 对容器的支持 | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +106,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -186,7 +191,6 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    262
                                                 </span>
                                             </div>
                                         </div>
@@ -196,20 +200,19 @@
                                         <p><code>Docker</code>利用<code>cgroups</code>实现资源限制，并未完全隔离原生资源信息，比如<code>/proc</code> <code>/sys</code>等资源，所以需要容器内程序支持<code>cgroups</code>以适配容器。当容器使用超限内存时，会抛出<code>OOME</code>(Out Of Memory Exception：内存异常)，并且会可能<code>kill</code>一些进程，造成意外情况。</p>
                                         <p><code>Java</code> <code>8u131</code>及以上版本开始支持<code>cgroup</code>，部分支持<code>Docker</code>的资源限制。<br><code>java8u131</code>需要加上<code>-XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap</code>参数以感知<code>docker</code>的内存限制。<br><code>java11</code>已正式支持容器，使用<code>-XX:+UseContainerSupport</code>参数打开容器支持，默认开启。</p>
                                         <a id="more"></a>
-                                        <p>在容器中获取限制情况：<br>
-                                            <figure class="highlight plain">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line"># cat /sys/fs/cgroup/memory/memory.limit_in_bytes</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>在容器中获取限制情况：</p>
+                                        <figure class="highlight plain">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"># cat &#x2F;sys&#x2F;fs&#x2F;cgroup&#x2F;memory&#x2F;memory.limit_in_bytes</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2>
                                         <ul>
                                             <li><a href="https://blogs.oracle.com/java-platform-group/java-se-support-for-docker-cpu-and-memory-limits" target="_blank" rel="noopener">Java SE support for Docker CPU and memory limits</a></li>
@@ -274,20 +277,20 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>

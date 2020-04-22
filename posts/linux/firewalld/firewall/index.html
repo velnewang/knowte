@@ -17,17 +17,19 @@
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="Operations,Linux,Firewall,firewalld," />
     <meta name="description" content="Linux firewalld 说明。">
-    <meta name="keywords" content="Operations,Linux,Firewall,firewalld">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Linux 防火墙命令说明">
     <meta property="og:url" content="https://knowte.velne.win/posts/linux/firewalld/firewall/index.html">
     <meta property="og:site_name" content="Knowte">
     <meta property="og:description" content="Linux firewalld 说明。">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2019-04-21T08:34:00.384Z">
+    <meta property="article:published_time" content="2018-08-21T16:00:00.000Z">
+    <meta property="article:modified_time" content="2019-04-21T08:34:00.384Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="Operations">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Firewall">
+    <meta property="article:tag" content="firewalld">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Linux 防火墙命令说明">
-    <meta name="twitter:description" content="Linux firewalld 说明。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -72,6 +74,7 @@
     </script>
     <link rel="canonical" href="https://knowte.velne.win/posts/linux/firewalld/firewall/" />
     <title>Linux 防火墙命令说明 | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +104,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -186,7 +189,6 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    324
                                                 </span>
                                             </div>
                                         </div>
@@ -223,20 +225,19 @@
                                             </table>
                                         </figure>
                                         <h2 id="富规则"><a href="#富规则" class="headerlink" title="富规则"></a>富规则</h2>
-                                        <p><code></code>sh<br>firewall-cmd –add-rich-rule=’rule source ipset=blacklist drop’<br>
-                                            <figure class="highlight plain">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Scripts</span><br><span class="line"></span><br><span class="line">```sh</span><br><span class="line">#!/bin/sh</span><br><span class="line"># _firewall.sh</span><br><span class="line"></span><br><span class="line">if [[ $SSH_PRP = &quot;load&quot; ]]</span><br><span class="line">  then</span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    firewall-cmd --permanent --service=ssh --add-port=$SSH_PORT_NEW</span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    firewall-cmd --permanent --service=ssh --remove-port=$SSH_PORT_DEFAULT</span><br><span class="line">    firewall-cmd --permanent --info-service=ssh</span><br><span class="line">    # systemctl restart firewalld</span><br><span class="line">fi</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>``sh<br>firewall-cmd –add-rich-rule=’rule source ipset=blacklist drop’</p>
+                                        <figure class="highlight plain">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Scripts</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;sh</span><br><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line"># _firewall.sh</span><br><span class="line"></span><br><span class="line">if [[ $SSH_PRP &#x3D; &quot;load&quot; ]]</span><br><span class="line">  then</span><br><span class="line">    firewall-cmd --permanent --info-service&#x3D;ssh</span><br><span class="line">    firewall-cmd --permanent --service&#x3D;ssh --add-port&#x3D;$SSH_PORT_NEW</span><br><span class="line">    firewall-cmd --permanent --info-service&#x3D;ssh</span><br><span class="line">    firewall-cmd --permanent --service&#x3D;ssh --remove-port&#x3D;$SSH_PORT_DEFAULT</span><br><span class="line">    firewall-cmd --permanent --info-service&#x3D;ssh</span><br><span class="line">    # systemctl restart firewalld</span><br><span class="line">fi</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h2 id="Status"><a href="#Status" class="headerlink" title="Status"></a>Status</h2>
                                         <p>start # systemctl start firewalld<br>status # systemctl status firewalld 或者 firewall-cmd –state<br>disable # systemctl disable firewalld<br>stop # systemctl stop firewalld</p>
                                         <h2 id="Config"><a href="#Config" class="headerlink" title="Config"></a>Config</h2>
@@ -247,7 +248,7 @@
                                                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">--permanent</span><br><span class="line"># firewall-cmd --reload</span><br><span class="line"># firewall-cmd --complete-reload</span><br><span class="line"># firewall-cmd --zone=public --add-interface=eth0</span><br><span class="line"># firewall-cmd --zone=dmz --list-ports</span><br><span class="line"># firewall-cmd --zone=dmz --add-port=8080/tcp</span><br><span class="line"># firewall-cmd --zone=work --add-service=smtp</span><br><span class="line"># firewall-cmd --zone=work --remove-service=smtp</span><br></pre>
+                                                        <pre><span class="line">--permanent</span><br><span class="line"># firewall-cmd --reload</span><br><span class="line"># firewall-cmd --complete-reload</span><br><span class="line"># firewall-cmd --zone&#x3D;public --add-interface&#x3D;eth0</span><br><span class="line"># firewall-cmd --zone&#x3D;dmz --list-ports</span><br><span class="line"># firewall-cmd --zone&#x3D;dmz --add-port&#x3D;8080&#x2F;tcp</span><br><span class="line"># firewall-cmd --zone&#x3D;work --add-service&#x3D;smtp</span><br><span class="line"># firewall-cmd --zone&#x3D;work --remove-service&#x3D;smtp</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -308,20 +309,20 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>

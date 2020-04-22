@@ -17,17 +17,18 @@
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="Operations,Cotinuous,Maven," />
     <meta name="description" content="Maven简单的设置仓库、镜像及配置。">
-    <meta name="keywords" content="Operations,Cotinuous,Maven">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Maven 简单设置">
     <meta property="og:url" content="https://knowte.velne.win/posts/continuous/maven/settings-lite/index.html">
     <meta property="og:site_name" content="Knowte">
     <meta property="og:description" content="Maven简单的设置仓库、镜像及配置。">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-07-18T08:05:42.045Z">
+    <meta property="article:published_time" content="2018-07-13T16:00:00.000Z">
+    <meta property="article:modified_time" content="2018-07-18T08:05:42.045Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="Operations">
+    <meta property="article:tag" content="Cotinuous">
+    <meta property="article:tag" content="Maven">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Maven 简单设置">
-    <meta name="twitter:description" content="Maven简单的设置仓库、镜像及配置。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -72,6 +73,7 @@
     </script>
     <link rel="canonical" href="https://knowte.velne.win/posts/continuous/maven/settings-lite/" />
     <title>Maven 简单设置 | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +103,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -186,7 +188,6 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    196
                                                 </span>
                                             </div>
                                         </div>
@@ -202,7 +203,7 @@
                                                         <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- &lt;offline&gt;false&lt;/offline&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>E:\Mirror\repo_maven\public<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>development<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>ali<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>development<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.maven.apache.org/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>ansj-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">name</span>&gt;</span>ansj Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.nlpcn.org/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre>
+                                                        <pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span> </span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- &lt;offline&gt;false&lt;/offline&gt; --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">localRepository</span>&gt;</span>E:\Mirror\repo_maven\public<span class="tag">&lt;/<span class="name">localRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>development<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>ali<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">id</span>&gt;</span>development<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://repo.maven.apache.org/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>ansj-repo<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">name</span>&gt;</span>ansj Repository<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.nlpcn.org/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
@@ -216,8 +217,8 @@
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/ide/eclipse/profile/" rel="next" title="Eclipse 启动配置">
-                                                    <i class="fa fa-chevron-left"></i> Eclipse 启动配置
+                                                <a href="/posts/lang/java/javac/" rel="next" title="Java Compiler 编译器命令">
+                                                    <i class="fa fa-chevron-left"></i> Java Compiler 编译器命令
                                                 </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
@@ -260,20 +261,20 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>

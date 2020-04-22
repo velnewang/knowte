@@ -15,19 +15,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
-    <meta name="keywords" content="Operations,IDE,Eclipse,Profile," />
-    <meta name="description" content="自定义Eclipse启动配置文件eclipse.ini，指定Maven设置、用户根目录、’JVM’设置等。">
-    <meta name="keywords" content="Operations,IDE,Eclipse,Profile">
+    <meta name="keywords" content="IDE,Eclipse,Preferences,SpringTools," />
+    <meta name="description" content="STS plugin Customization ini at sts_plugin.ini.">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Eclipse 启动配置">
-    <meta property="og:url" content="https://knowte.velne.win/posts/ide/eclipse/profile/index.html">
+    <meta property="og:title" content="STS 插件配置">
+    <meta property="og:url" content="https://knowte.velne.win/posts/ide/eclipse/eclipse-sts-plugin-ini/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="自定义Eclipse启动配置文件eclipse.ini，指定Maven设置、用户根目录、’JVM’设置等。">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-07-18T04:32:52.477Z">
+    <meta property="og:description" content="STS plugin Customization ini at sts_plugin.ini.">
+    <meta property="article:published_time" content="2020-03-09T16:00:00.000Z">
+    <meta property="article:modified_time" content="2020-04-17T10:00:57.672Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="IDE">
+    <meta property="article:tag" content="Eclipse">
+    <meta property="article:tag" content="Preferences">
+    <meta property="article:tag" content="SpringTools">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Eclipse 启动配置">
-    <meta name="twitter:description" content="自定义Eclipse启动配置文件eclipse.ini，指定Maven设置、用户根目录、’JVM’设置等。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -70,8 +72,9 @@
             }
         };
     </script>
-    <link rel="canonical" href="https://knowte.velne.win/posts/ide/eclipse/profile/" />
-    <title>Eclipse 启动配置 | Knowte</title>
+    <link rel="canonical" href="https://knowte.velne.win/posts/ide/eclipse/eclipse-sts-plugin-ini/" />
+    <title>STS 插件配置 | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +104,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -147,7 +150,7 @@
                         <div id="posts" class="posts-expand">
                             <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
                                 <div class="post-block">
-                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/ide/eclipse/profile/">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/ide/eclipse/eclipse-sts-plugin-ini/">
                                     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
                                         <meta itemprop="name" content="Velne Wang">
                                         <meta itemprop="description" content="">
@@ -157,15 +160,15 @@
                                         <meta itemprop="name" content="Knowte">
                                     </span>
                                     <header class="post-header">
-                                        <h1 class="post-title" itemprop="name headline">Eclipse 启动配置</h1>
+                                        <h1 class="post-title" itemprop="name headline">STS 插件配置</h1>
                                         <div class="post-meta">
                                             <span class="post-time">
                                                 <span class="post-meta-item-icon">
                                                     <i class="fa fa-calendar-o"></i>
                                                 </span>
                                                 <span class="post-meta-item-text">发表于</span>
-                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-09T00:00:00+08:00">
-                                                    2018-07-09
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-10T00:00:00+08:00">
+                                                    2020-03-10
                                                 </time>
                                             </span>
                                             <span class="post-category">
@@ -175,8 +178,14 @@
                                                 </span>
                                                 <span class="post-meta-item-text">分类于</span>
                                                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                                                    <a href="/categories/notes-config/" itemprop="url" rel="index">
-                                                        <span itemprop="name">notes-config</span>
+                                                    <a href="/categories/operations/" itemprop="url" rel="index">
+                                                        <span itemprop="name">operations</span>
+                                                    </a>
+                                                </span>
+                                                ，
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/operations/ide/" itemprop="url" rel="index">
+                                                        <span itemprop="name">ide</span>
                                                     </a>
                                                 </span>
                                             </span>
@@ -186,58 +195,47 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    250
                                                 </span>
                                             </div>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p>自定义<code>Eclipse</code>启动配置文件<code>eclipse.ini</code>，指定<code>Maven</code>设置、用户根目录、’JVM’设置等。</p>
+                                        <!-- start -->
+                                        <p>STS plugin Customization ini at <code>sts_plugin.ini</code>.</p>
                                         <a id="more"></a>
-                                        <h2 id="配置版本"><a href="#配置版本" class="headerlink" title="配置版本"></a>配置版本</h2>
-                                        <figure class="highlight plain">
+                                        <hr>
+                                        <figure class="highlight">
                                             <table>
                                                 <tr>
                                                     <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre>
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre>
                                                     </td>
                                                     <td class="code">
-                                                        <pre><span class="line">Eclipse Java EE IDE for Web Developers.</span><br><span class="line"></span><br><span class="line">Version: Oxygen.3a Release (4.7.3a)</span><br><span class="line">Build id: 20180405-1200</span><br></pre>
+                                                        <pre><span class="line">// sts_plugin.ini</span><br><span class="line">// STS plugin Customization ini</span><br><span class="line"></span><br><span class="line">// ## Install/Update</span><br><span class="line">// ### Automatic Updates</span><br><span class="line">// `@eclipse.p2.data.area/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/.data/.settings/org.eclipse.equinox.p2.ui.sdk.scheduler.prefs`</span><br><span class="line">org.eclipse.equinox.p2.ui.sdk.scheduler/enabled=false</span><br><span class="line"></span><br><span class="line">// ## Status bar_(1/2)</span><br><span class="line">// ### Hide Tip of the Day</span><br><span class="line">// `@osgi.configuration.area/.settings/org.eclipse.tips.ide.prefs`</span><br><span class="line">org.eclipse.tips.ide/activate_at_startup=disable</span><br><span class="line"></span><br><span class="line">// ## Locations</span><br><span class="line">// ### Plugins preferences</span><br><span class="line">// `@osgi.instance.area/.metadata/.plugins/org.eclipse.core.runtime/.settings/*`</span><br><span class="line"></span><br><span class="line">// ## Status bar_(2/2)</span><br><span class="line">// ### Show heap status</span><br><span class="line">// org.eclipse.ui/SHOW_MEMORY_MONITOR=true</span><br><span class="line"></span><br><span class="line">// ## Font</span><br><span class="line">// ### Colors and fonts</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.compare.contentmergeviewer.TextMergeViewer=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.debug.ui.DetailPaneFont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.debug.ui.MemoryViewTableFont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.debug.ui.consoleFont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.egit.ui.CommitMessageEditorFont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.egit.ui.CommitMessageFont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffHeadlineFont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.jdt.internal.ui.compare.JavaMergeViewer=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.jdt.internal.ui.compare.PropertiesFileMergeViewer=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.jdt.ui.PropertiesFileEditor.textfont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.jdt.ui.editors.textfont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.jface.textfont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.pde.internal.ui.compare.ManifestContentMergeViewer=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.pde.internal.ui.compare.PluginContentMergeViewer=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.wst.jsdt.internal.ui.compare.JavaMergeViewer=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.wst.jsdt.ui.editors.textfont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/org.eclipse.wst.sse.ui.textfont=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line">org.eclipse.ui.workbench/terminal.views.view.font.definition=1|Source Code Pro|12.75|0|WINDOWS|1|-17|0|0|0|400|0|0|0|0|10|2|1|49|Source Code Pro;</span><br><span class="line"></span><br><span class="line">// ## Line delimiter</span><br><span class="line">// ### General line separator</span><br><span class="line">org.eclipse.core.runtime/line.separator=\n</span><br><span class="line"></span><br><span class="line">// ## Character set</span><br><span class="line">// ### General text file encoding</span><br><span class="line">org.eclipse.core.resources/encoding=UTF-8</span><br><span class="line"></span><br><span class="line">// ### Content types encoding</span><br><span class="line">// org.eclipse.core.runtime/content-types/org.eclipse.core.runtime.text/charset=UTF-8</span><br><span class="line">// org.eclipse.core.runtime/content-types/org.eclipse.jdt.core.javaProperties/charset=UTF-8</span><br><span class="line">// org.eclipse.core.runtime/content-types/org.eclipse.jst.jsp.core.jspsource/charset=UTF-8</span><br><span class="line">// org.eclipse.core.runtime/content-types/org.springframework.boot.ide.properties.application.properties/charset=UTF-8</span><br><span class="line"></span><br><span class="line">// ## Code Style</span><br><span class="line">// ### General editors insert spaces for tab</span><br><span class="line">org.eclipse.ui.editors/spacesForTabs=true</span><br><span class="line"></span><br><span class="line">// ## Java formatter indent using spaces and line width</span><br><span class="line"></span><br><span class="line">// ## XML formatting indent using spaces and line width</span><br><span class="line">org.eclipse.wst.xml.core/indentationChar=space</span><br><span class="line">org.eclipse.wst.xml.core/indentationSize=4</span><br><span class="line">org.eclipse.wst.xml.core/lineWidth=120</span><br><span class="line"></span><br><span class="line">// ## Maven setting</span><br><span class="line">// ### User settings and local repository</span><br><span class="line">// org.eclipse.m2e.core/eclipse.m2.userSettingsFile=maven_settings.xml</span><br><span class="line"></span><br><span class="line">// ## Spring Boot</span><br><span class="line">// ### Spring Boot Initializr</span><br><span class="line">org.springframework.ide.eclipse.boot/org.springframework.ide.eclipse.boot.wizard.initializr.url=https\://start.spring.io\n</span><br></pre>
                                                     </td>
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <h2 id="配置文件及说明"><a href="#配置文件及说明" class="headerlink" title="配置文件及说明"></a>配置文件及说明</h2>
-                                        <figure class="highlight ini">
-                                            <table>
-                                                <tr>
-                                                    <td class="gutter">
-                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre>
-                                                    </td>
-                                                    <td class="code">
-                                                        <pre><span class="line">-s</span><br><span class="line">E:\Mirror\repo_maven\setting.xml</span><br><span class="line"><span class="comment"># 指定Maven设置</span></span><br><span class="line">-startup</span><br><span class="line">plugins/org.eclipse.equinox.launcher_1.4.0.v20161219-1356.jar</span><br><span class="line">--launcher.library</span><br><span class="line">plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.1.551.v20171108-1834</span><br><span class="line">-product</span><br><span class="line">org.eclipse.epp.package.jee.product</span><br><span class="line">-showsplash</span><br><span class="line">org.eclipse.epp.package.common</span><br><span class="line">--launcher.defaultAction</span><br><span class="line">openFile</span><br><span class="line">--launcher.defaultAction</span><br><span class="line">openFile</span><br><span class="line">--launcher.appendVmargs</span><br><span class="line">-vmargs</span><br><span class="line">-Duser.home=S:\data_eclipse\user_home</span><br><span class="line"><span class="comment"># 指定Eclipse用户根目录</span></span><br><span class="line">-Dosgi.user.area=@user.home/user</span><br><span class="line"><span class="comment"># 指定Eclipse用户个人目录</span></span><br><span class="line">-Dosgi.configuration.area=@user.home/configuration</span><br><span class="line"><span class="comment"># 指定Eclipse用户配置目录</span></span><br><span class="line">-Dosgi.instance.area=@user.home/javawork</span><br><span class="line"><span class="comment"># 指定Eclipse用户工作目录</span></span><br><span class="line">-Dosgi.requiredJavaVersion=1.8</span><br><span class="line">-Dosgi.instance.area.default=@user.home/eclipse-workspace</span><br><span class="line"><span class="comment"># 指定Eclipse用户缺省工作目录</span></span><br><span class="line">-XX:+UseG1GC</span><br><span class="line">-XX:+UseStringDeduplication</span><br><span class="line"><span class="attr">--add-modules</span>=ALL-SYSTEM</span><br><span class="line">-Dosgi.requiredJavaVersion=1.8</span><br><span class="line">-Xms256m</span><br><span class="line">-Xmx2048m</span><br><span class="line"><span class="attr">--add-modules</span>=ALL-SYSTEM</span><br></pre>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </figure>
+                                        <hr>
+                                        <!-- end -->
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
-                                            <a href="/tags/Operations/" rel="tag"># Operations</a>
                                             <a href="/tags/IDE/" rel="tag"># IDE</a>
                                             <a href="/tags/Eclipse/" rel="tag"># Eclipse</a>
-                                            <a href="/tags/Profile/" rel="tag"># Profile</a>
+                                            <a href="/tags/Preferences/" rel="tag"># Preferences</a>
+                                            <a href="/tags/SpringTools/" rel="tag"># SpringTools</a>
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/ide/eclipse/launch/" rel="next" title="Eclipse 启动脚本">
-                                                    <i class="fa fa-chevron-left"></i> Eclipse 启动脚本
+                                                <a href="/posts/jargon/pronunciation/pron-etc/" rel="next" title="Pronunciation 常规读音">
+                                                    <i class="fa fa-chevron-left"></i> Pronunciation 常规读音
                                                 </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/continuous/maven/settings-lite/" rel="prev" title="Maven 简单设置">
-                                                    Maven 简单设置 <i class="fa fa-chevron-right"></i>
+                                                <a href="/posts/ide/eclipse/eclipse-sts-rc-cmd/" rel="prev" title="STS 启动命令行">
+                                                    STS 启动命令行 <i class="fa fa-chevron-right"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -258,15 +256,7 @@
                 </div>
                 <aside id="sidebar" class="sidebar">
                     <div class="sidebar-inner">
-                        <ul class="sidebar-nav motion-element">
-                            <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-                                文章目录
-                            </li>
-                            <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-                                站点概览
-                            </li>
-                        </ul>
-                        <section class="site-overview-wrap sidebar-panel">
+                        <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
                             <div class="site-overview">
                                 <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
                                     <p class="site-author-name" itemprop="name">Velne Wang</p>
@@ -274,38 +264,26 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>
                                 </nav>
                             </div>
                         </section>
-                        <!--noindex-->
-                        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-                            <div class="post-toc">
-                                <div class="post-toc-content">
-                                    <ol class="nav">
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#配置版本"><span class="nav-text">配置版本</span></a></li>
-                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件及说明"><span class="nav-text">配置文件及说明</span></a></li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </section>
-                        <!--/noindex-->
                     </div>
                 </aside>
             </div>

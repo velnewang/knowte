@@ -16,18 +16,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="Operations,Shell,Bash,bashrc," />
-    <meta name="description" content="一些简单的Bash环境配置，alias`PS1`等。">
-    <meta name="keywords" content="Operations,Shell,Bash,bashrc">
+    <meta name="description" content="一些简单的Bash环境配置，alias&#96;&#96;PS1等。">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Shell 一些Bash环境配置">
     <meta property="og:url" content="https://knowte.velne.win/posts/shell/bash/bashrc/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="一些简单的Bash环境配置，alias`PS1`等。">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2019-03-23T11:26:54.966Z">
+    <meta property="og:description" content="一些简单的Bash环境配置，alias&#96;&#96;PS1等。">
+    <meta property="article:published_time" content="2018-05-21T16:00:00.000Z">
+    <meta property="article:modified_time" content="2019-03-23T11:26:54.966Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="Operations">
+    <meta property="article:tag" content="Shell">
+    <meta property="article:tag" content="Bash">
+    <meta property="article:tag" content="bashrc">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Shell 一些Bash环境配置">
-    <meta name="twitter:description" content="一些简单的Bash环境配置，alias`PS1`等。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -72,6 +74,7 @@
     </script>
     <link rel="canonical" href="https://knowte.velne.win/posts/shell/bash/bashrc/" />
     <title>Shell 一些Bash环境配置 | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +104,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -186,61 +189,57 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    437
                                                 </span>
                                             </div>
                                         </div>
                                     </header>
                                     <div class="post-body" itemprop="articleBody">
-                                        <p>一些简单的<code>Bash</code>环境配置，<code>alias`</code>PS1`等。</p>
+                                        <p>一些简单的<code>Bash</code>环境配置，<code>alias``PS1</code>等。</p>
                                         <a id="more"></a>
                                         <h1 id="Some-Aliases"><a href="#Some-Aliases" class="headerlink" title="Some Aliases"></a>Some Aliases</h1>
-                                        <p>设置简短的别名<code>alias</code>。<br>
-                                            <figure class="highlight bash">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line"><span class="comment"># alias l.='ls -d .* --color=auto'</span></span><br><span class="line"><span class="comment"># --show-control-chars: help showing accented characters</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F --color=auto --show-control-chars'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></span><br><span class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>设置简短的别名<code>alias</code>。</p>
+                                        <figure class="highlight bash">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"><span class="comment"># alias l.='ls -d .* --color=auto'</span></span><br><span class="line"><span class="comment"># --show-control-chars: help showing accented characters</span></span><br><span class="line"><span class="built_in">alias</span> ls=<span class="string">'ls -F --color=auto --show-control-chars'</span></span><br><span class="line"><span class="built_in">alias</span> ll=<span class="string">'ls -l'</span></span><br><span class="line"><span class="built_in">alias</span> grep=<span class="string">'grep --color=auto'</span></span><br><span class="line"><span class="built_in">alias</span> rm=<span class="string">'rm -i'</span></span><br><span class="line"><span class="built_in">alias</span> cp=<span class="string">'cp -i'</span></span><br><span class="line"><span class="built_in">alias</span> mv=<span class="string">'mv -i'</span></span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h1 id="Prompt-String-One"><a href="#Prompt-String-One" class="headerlink" title="Prompt String One"></a>Prompt String One</h1>
                                         <p>终端命令提示符<code>PS1</code>。</p>
                                         <h2 id="Plain-PS1"><a href="#Plain-PS1" class="headerlink" title="Plain PS1"></a>Plain PS1</h2>
-                                        <p>一个简单清晰的提示符，用户名、本地主机名、完整路径以及分行显示权限提示<code>$</code>或<code>#</code>，并且使用不同颜色区分。<br>
-                                            <figure class="highlight bash">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]▀\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]▌\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ [\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]█ \$\[\033[0m\] '</span></span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>一个简单清晰的提示符，用户名、本地主机名、完整路径以及分行显示权限提示<code>$</code>或<code>#</code>，并且使用不同颜色区分。</p>
+                                        <figure class="highlight bash">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]▀\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌[\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]▌\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ [\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\n\[\033[0;32m\]█ \$\[\033[0m\] '</span></span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h2 id="PS1-with-Git"><a href="#PS1-with-Git" class="headerlink" title="PS1 with Git"></a>PS1 with Git</h2>
-                                        <p>增加显示<code>Git</code>的分支<code>branch</code>，需要安装<code>Git</code>并加载附带的<code>git-prompt.sh</code>文件。<br>
-                                            <figure class="highlight bash">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▀\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▌\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ \[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]█ \[\033[0;32m\]\$\[\033[0m\] '</span></span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>增加显示<code>Git</code>的分支<code>branch</code>，需要安装<code>Git</code>并加载附带的<code>git-prompt.sh</code>文件。</p>
+                                        <figure class="highlight bash">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▄\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▀\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]▌\[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]▌\[\033[0;32m\]\$\[\033[0m\] '</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># /u2584=▄ /u2580=▀ /u258c=▌ /u2588=█</span></span><br><span class="line"><span class="built_in">source</span> ~/.git-prompt.sh</span><br><span class="line">PS1=<span class="string">'\[\033[0;32m\]█ \[\033[0;32m\][\u@\H \[\033[0;33m\]\w\[\033[0;32m\]]\[\033[0;36m\]$(__git_ps1)\n\[\033[0;32m\]█ \[\033[0;32m\]\$\[\033[0m\] '</span></span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h1 id="Add-to-bashrc"><a href="#Add-to-bashrc" class="headerlink" title="Add to .bashrc"></a>Add to .bashrc</h1>
                                         <p>保存至当前用户<code>bash</code>配置<code>~/.bashrc</code>中。</p>
                                         <h1 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h1>
@@ -255,14 +254,14 @@
                                         </div>
                                         <div class="post-nav">
                                             <div class="post-nav-next post-nav-item">
-                                                <a href="/posts/linux/network/if_virtual/" rel="next" title="Linux 虚拟网卡方法">
-                                                    <i class="fa fa-chevron-left"></i> Linux 虚拟网卡方法
+                                                <a href="/posts/shell/cmd/currentdir/" rel="next" title="CMD 获取路径命令">
+                                                    <i class="fa fa-chevron-left"></i> CMD 获取路径命令
                                                 </a>
                                             </div>
                                             <span class="post-nav-divider"></span>
                                             <div class="post-nav-prev post-nav-item">
-                                                <a href="/posts/shell/cmd/currentdir/" rel="prev" title="CMD 获取路径命令">
-                                                    CMD 获取路径命令 <i class="fa fa-chevron-right"></i>
+                                                <a href="/posts/security/ssl/ssl-tls-notes/" rel="prev" title="Security SSL/TLS 历史及概述">
+                                                    Security SSL/TLS 历史及概述 <i class="fa fa-chevron-right"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -299,20 +298,20 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html class="theme-next mist" lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="theme-color" content="#222">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/icon-180x180.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/icon-32x32.png?v=5.1.4">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
+    <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
+    <meta name="keywords" content="IDE,Eclipse,Preferences," />
+    <meta name="description" content="设置Eclipse中的偏好选项，包括字体、换行、字符集、代码风格(空格缩进)、Maven、Initializr、状态栏、自动更新选项。">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Eclipse 偏好选项">
+    <meta property="og:url" content="https://knowte.velne.win/posts/ide/eclipse/eclipse-preferences/index.html">
+    <meta property="og:site_name" content="Knowte">
+    <meta property="og:description" content="设置Eclipse中的偏好选项，包括字体、换行、字符集、代码风格(空格缩进)、Maven、Initializr、状态栏、自动更新选项。">
+    <meta property="article:published_time" content="2020-03-11T16:00:00.000Z">
+    <meta property="article:modified_time" content="2020-04-22T04:29:55.391Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="IDE">
+    <meta property="article:tag" content="Eclipse">
+    <meta property="article:tag" content="Preferences">
+    <meta name="twitter:card" content="summary">
+    <script type="text/javascript" id="hexo.configurations">
+        var NexT = window.NexT || {};
+        var CONFIG = {
+            root: '/',
+            scheme: 'Mist',
+            version: '5.1.4',
+            sidebar: {
+                "position": "left",
+                "display": "hide",
+                "offset": 12,
+                "b2t": false,
+                "scrollpercent": true,
+                "onmobile": false
+            },
+            fancybox: true,
+            tabs: true,
+            motion: {
+                "enable": false,
+                "async": false,
+                "transition": {
+                    "post_block": "fadeIn",
+                    "post_header": "slideDownIn",
+                    "post_body": "slideDownIn",
+                    "coll_header": "slideLeftIn",
+                    "sidebar": "slideUpIn"
+                }
+            },
+            algolia: {
+                applicationID: '',
+                apiKey: '',
+                indexName: '',
+                hits: {
+                    "per_page": 10
+                },
+                labels: {
+                    "input_placeholder": "Search for Posts",
+                    "hits_empty": "We didn't find any results for the search: ${query}",
+                    "hits_stats": "${hits} results found in ${time} ms"
+                }
+            }
+        };
+    </script>
+    <link rel="canonical" href="https://knowte.velne.win/posts/ide/eclipse/eclipse-preferences/" />
+    <title>Eclipse 偏好选项 | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+    <div class="container sidebar-position-left page-post-detail">
+        <div class="headband"></div>
+        <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+            <div class="header-inner">
+                <div class="site-brand-wrapper">
+                    <div class="site-meta ">
+                        <div class="custom-logo-site-title">
+                            <a href="/" class="brand" rel="start">
+                                <span class="logo-line-before"><i></i></span>
+                                <span class="site-title">Knowte</span>
+                                <span class="logo-line-after"><i></i></span>
+                            </a>
+                        </div>
+                        <p class="site-subtitle">A learning notes.</p>
+                    </div>
+                    <div class="site-nav-toggle">
+                        <button>
+                            <span class="btn-bar"></span>
+                            <span class="btn-bar"></span>
+                            <span class="btn-bar"></span>
+                        </button>
+                    </div>
+                </div>
+                <nav class="site-nav">
+                    <ul id="menu" class="menu">
+                        <li class="menu-item menu-item-home">
+                            <a href="/%20" rel="section">
+                                <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+                                首页
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-categories">
+                            <a href="/categories/%20" rel="section">
+                                <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+                                分类
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-archives">
+                            <a href="/archives/%20" rel="section">
+                                <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+                                归档
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-tags">
+                            <a href="/tags/%20" rel="section">
+                                <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+                                标签
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-about">
+                            <a href="/about/%20" rel="section">
+                                <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
+                                关于
+                            </a>
+                        </li>
+                        <li class="menu-item menu-item-main">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
+                                <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+                                主站
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main id="main" class="main">
+            <div class="main-inner">
+                <div class="content-wrap">
+                    <div id="content" class="content">
+                        <div id="posts" class="posts-expand">
+                            <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+                                <div class="post-block">
+                                    <link itemprop="mainEntityOfPage" href="https://knowte.velne.win/posts/ide/eclipse/eclipse-preferences/">
+                                    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                        <meta itemprop="name" content="Velne Wang">
+                                        <meta itemprop="description" content="">
+                                        <meta itemprop="image" content="/images/avatar.gif">
+                                    </span>
+                                    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                                        <meta itemprop="name" content="Knowte">
+                                    </span>
+                                    <header class="post-header">
+                                        <h1 class="post-title" itemprop="name headline">Eclipse 偏好选项</h1>
+                                        <div class="post-meta">
+                                            <span class="post-time">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-calendar-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">发表于</span>
+                                                <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-12T00:00:00+08:00">
+                                                    2020-03-12
+                                                </time>
+                                            </span>
+                                            <span class="post-category">
+                                                <span class="post-meta-divider">|</span>
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-folder-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">分类于</span>
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/operations/" itemprop="url" rel="index">
+                                                        <span itemprop="name">operations</span>
+                                                    </a>
+                                                </span>
+                                                ，
+                                                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                                                    <a href="/categories/operations/ide/" itemprop="url" rel="index">
+                                                        <span itemprop="name">ide</span>
+                                                    </a>
+                                                </span>
+                                            </span>
+                                            <div class="post-wordcount">
+                                                <span class="post-meta-item-icon">
+                                                    <i class="fa fa-file-word-o"></i>
+                                                </span>
+                                                <span class="post-meta-item-text">字数统计&#58;</span>
+                                                <span title="字数统计">
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </header>
+                                    <div class="post-body" itemprop="articleBody">
+                                        <!-- start -->
+                                        <p>设置<code>Eclipse</code>中的偏好选项，包括字体、换行、字符集、代码风格(空格缩进)、Maven、Initializr、状态栏、自动更新选项。</p>
+                                        <a id="more"></a>
+                                        <hr>
+                                        <h2 id="Locations"><a href="#Locations" class="headerlink" title="Locations"></a>Locations</h2>
+                                        <h3 id="Instance"><a href="#Instance" class="headerlink" title="Instance"></a>Instance</h3>
+                                        <blockquote>
+                                            <p>(-data) {osgi.instance.area} [@none, @noDefault, @user.home, @user.dir, filepath, url]</p>
+                                            <p>Instance locations contain user-defined data artifacts. For example, the Resources plug-in uses the instance area as the workspace location and thus the default home for projects. Other plugins are free to write whatever files they like in this location.</p>
+                                        </blockquote>
+                                        <h3 id="Plugins-preferences"><a href="#Plugins-preferences" class="headerlink" title="Plugins preferences"></a>Plugins preferences</h3>
+                                        <p><code>PLUGINS_PREFS</code>=<code>@osgi.instance.area/.metadata/.plugins/org.eclipse.core.runtime/.settings/</code></p>
+                                        <hr>
+                                        <h2 id="Support-pluginCustomization"><a href="#Support-pluginCustomization" class="headerlink" title="Support pluginCustomization"></a>Support pluginCustomization</h2>
+                                        <ul>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#Colors-and-fonts">Colors and fonts</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#General-line-separator">General line separator</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#General-text-file-encoding">General text file encoding</a></li>
+                                            <li><input disabled="" type="checkbox"> <a href="#Content-types-encoding">Content types encoding</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#General-editors-insert-spaces-for-tab">General editors insert spaces for tab</a></li>
+                                            <li><input disabled="" type="checkbox"> <a href="#Java-formatter-indent-using-spaces-and-line-width">Java formatter indent using spaces and line width</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#XML-formatting-indent-using-spaces-and-line-width">XML formatting indent using spaces and line width</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#User-settings-and-local-repository">User settings and local repository</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#Spring-Boot-Initializr">Spring Boot Initializr</a></li>
+                                            <li><input disabled="" type="checkbox"> <a href="#Show-heap-status">Show heap status</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#Hide-Tip-of-the-Day">Hide Tip of the Day</a></li>
+                                            <li><input checked="" disabled="" type="checkbox"> <a href="#Automatic-Updates">Automatic Updates</a></li>
+                                        </ul>
+                                        <hr>
+                                        <h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2>
+                                        <h3 id="Colors-and-fonts"><a href="#Colors-and-fonts" class="headerlink" title="Colors and fonts"></a>Colors and fonts</h3>
+                                        <p><code>Preferences</code> -&gt; <code>General</code> -&gt; <code>Appearence</code> -&gt; <code>Colors and Fonts</code></p>
+                                        <blockquote>
+                                            <ul>
+                                                <li>Basic<ul>
+                                                        <li>Text Font</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <p>Font: <code>Source Code Pro</code><br>Size: <code>13</code></p>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.ui.workbench.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Line-delimiter"><a href="#Line-delimiter" class="headerlink" title="Line delimiter"></a>Line delimiter</h2>
+                                        <h3 id="General-line-separator"><a href="#General-line-separator" class="headerlink" title="General line separator"></a>General line separator</h3>
+                                        <p><code>Preferences</code> -&gt; <code>General</code> -&gt; <code>Workspace</code></p>
+                                        <blockquote>
+                                            <p>New text file line delimiter:<br>Other: <code>Unix</code></p>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.core.runtime.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Character-set"><a href="#Character-set" class="headerlink" title="Character set"></a>Character set</h2>
+                                        <h3 id="General-text-file-encoding"><a href="#General-text-file-encoding" class="headerlink" title="General text file encoding"></a>General text file encoding</h3>
+                                        <p><code>Preferences</code> -&gt; <code>General</code> -&gt; <code>Workspace</code></p>
+                                        <blockquote>
+                                            <p>Text file encoding<br>Other: <code>UTF-8</code></p>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.core.resources.prefs</code></p>
+                                        <h3 id="Content-types-encoding"><a href="#Content-types-encoding" class="headerlink" title="Content types encoding"></a>Content types encoding</h3>
+                                        <p><code>Preferences</code> -&gt; <code>General</code> -&gt; <code>Content Types</code></p>
+                                        <blockquote>
+                                            <p>Content Types:<br>Text</p>
+                                            <ul>
+                                                <li><code>Java Properties File</code></li>
+                                                <li><code>JSP</code>
+                                                    <ul>
+                                                        <li><code>JSP Fragment</code></li>
+                                                        <li><code>JSP Tag Definition</code>
+                                                            <ul>
+                                                                <li><code>XML JSP Tag Definition</code></li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li><code>Spring Properties File</code></li>
+                                            </ul>
+                                            <p>Default encoding: <code>UTF-8</code> -&gt; <code>Update</code> &lt;-</p>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.core.runtime.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Code-Style"><a href="#Code-Style" class="headerlink" title="Code Style"></a>Code Style</h2>
+                                        <h3 id="General-editors-insert-spaces-for-tab"><a href="#General-editors-insert-spaces-for-tab" class="headerlink" title="General editors insert spaces for tab"></a>General editors insert spaces for tab</h3>
+                                        <p><code>Preferences</code> -&gt; <code>General</code> -&gt; <code>Editors</code> -&gt; <code>Text Editors</code></p>
+                                        <blockquote>
+                                            <ul>
+                                                <li><input checked="" disabled="" type="checkbox"> Insert spaces for tabs</li>
+                                            </ul>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.ui.editors.prefs</code></p>
+                                        <h3 id="Java-formatter-indent-using-spaces-and-line-width"><a href="#Java-formatter-indent-using-spaces-and-line-width" class="headerlink" title="Java formatter indent using spaces and line width"></a>Java formatter indent using spaces and line width</h3>
+                                        <p><code>Preferences</code> -&gt; <code>Java</code> -&gt; <code>Code Style</code> -&gt; <code>Formatter</code></p>
+                                        <blockquote>
+                                            <p>Active profile:<br><code>Edit...</code></p>
+                                            <ul>
+                                                <li>Indentation<ul>
+                                                        <li>Tab policy: <code>Spaces only</code></li>
+                                                        <li>Indentation size: <code>4</code></li>
+                                                        <li>Tab size: <code>4</code></li>
+                                                    </ul>
+                                                </li>
+                                                <li>Line Wrapping<ul>
+                                                        <li>Maximum line width: <code>120</code></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.jdt.core.prefs</code><br><code>@PLUGINS_PREFS/org.eclipse.jdt.ui.prefs</code></p>
+                                        <h3 id="XML-formatting-indent-using-spaces-and-line-width"><a href="#XML-formatting-indent-using-spaces-and-line-width" class="headerlink" title="XML formatting indent using spaces and line width"></a>XML formatting indent using spaces and line width</h3>
+                                        <p><code>Preferences</code> -&gt; <code>XML</code> -&gt; <code>XML Files</code> -&gt; <code>Editor</code></p>
+                                        <blockquote>
+                                            <p>Formatting</p>
+                                            <ul>
+                                                <li>Line width: <code>120</code></li>
+                                                <li>[-] Indent using spaces</li>
+                                                <li>Indentation size: <code>4</code></li>
+                                            </ul>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.wst.xml.core.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Maven-setting"><a href="#Maven-setting" class="headerlink" title="Maven setting"></a>Maven setting</h2>
+                                        <h3 id="User-settings-and-local-repository"><a href="#User-settings-and-local-repository" class="headerlink" title="User settings and local repository"></a>User settings and local repository</h3>
+                                        <p><code>Preferences</code> -&gt; <code>Maven</code> -&gt; <code>User Settings</code></p>
+                                        <blockquote>
+                                            <p>User Settings (open file):</p>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.m2e.core.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h2>
+                                        <h3 id="Spring-Boot-Initializr"><a href="#Spring-Boot-Initializr" class="headerlink" title="Spring Boot Initializr"></a>Spring Boot Initializr</h3>
+                                        <p><code>Preferences</code> -&gt; <code>Spring</code> -&gt; <code>Boot</code> -&gt; <code>Initializr</code></p>
+                                        <blockquote>
+                                            <p>Initializr URLs<br><code>https://start.spring.io</code></p>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.springframework.ide.eclipse.boot.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Status-bar"><a href="#Status-bar" class="headerlink" title="Status bar"></a>Status bar</h2>
+                                        <h3 id="Show-heap-status"><a href="#Show-heap-status" class="headerlink" title="Show heap status"></a>Show heap status</h3>
+                                        <p><code>Preferences</code> -&gt; <code>General</code></p>
+                                        <blockquote>
+                                            <ul>
+                                                <li><input checked="" disabled="" type="checkbox"> Show heap status</li>
+                                            </ul>
+                                        </blockquote>
+                                        <p><code>@PLUGINS_PREFS/org.eclipse.ui.prefs</code></p>
+                                        <h3 id="Hide-Tip-of-the-Day"><a href="#Hide-Tip-of-the-Day" class="headerlink" title="Hide Tip of the Day"></a>Hide Tip of the Day</h3>
+                                        <p><code>Help</code> -&gt; <code>Tip of the Day</code></p>
+                                        <blockquote>
+                                            <p><code>Startup Options</code></p>
+                                            <ul>
+                                                <li><input disabled="" type="checkbox"> Show dialog on new tips</li>
+                                                <li><input disabled="" type="checkbox"> Indicate new tips in status bar</li>
+                                                <li><input checked="" disabled="" type="checkbox"> <strong>Disable</strong></li>
+                                            </ul>
+                                        </blockquote>
+                                        <p><code>@osgi.configuration.area/.settings/org.eclipse.tips.ide.prefs</code></p>
+                                        <hr>
+                                        <h2 id="Install-Update"><a href="#Install-Update" class="headerlink" title="Install/Update"></a>Install/Update</h2>
+                                        <h3 id="Automatic-Updates"><a href="#Automatic-Updates" class="headerlink" title="Automatic Updates"></a>Automatic Updates</h3>
+                                        <p><code>Preferences</code> -&gt; <code>Install/Update</code> -&gt; <code>Automatic Updates</code></p>
+                                        <blockquote>
+                                            <ul>
+                                                <li><input disabled="" type="checkbox"> Automatically find new updates and notify me</li>
+                                            </ul>
+                                        </blockquote>
+                                        <p><code>@eclipse.p2.data.area/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile/.data/.settings/org.eclipse.equinox.p2.ui.sdk.scheduler.prefs</code></p>
+                                        <hr>
+                                        <!-- end -->
+                                    </div>
+                                    <footer class="post-footer">
+                                        <div class="post-tags">
+                                            <a href="/tags/IDE/" rel="tag"># IDE</a>
+                                            <a href="/tags/Eclipse/" rel="tag"># Eclipse</a>
+                                            <a href="/tags/Preferences/" rel="tag"># Preferences</a>
+                                        </div>
+                                        <div class="post-nav">
+                                            <div class="post-nav-next post-nav-item">
+                                                <a href="/posts/ide/eclipse/eclipse-sts-rc-cmd/" rel="next" title="STS 启动命令行">
+                                                    <i class="fa fa-chevron-left"></i> STS 启动命令行
+                                                </a>
+                                            </div>
+                                            <span class="post-nav-divider"></span>
+                                            <div class="post-nav-prev post-nav-item">
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </div>
+                            </article>
+                            <div class="post-spread">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-toggle">
+                    <div class="sidebar-toggle-line-wrap">
+                        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+                        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+                    </div>
+                </div>
+                <aside id="sidebar" class="sidebar">
+                    <div class="sidebar-inner">
+                        <ul class="sidebar-nav motion-element">
+                            <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+                                文章目录
+                            </li>
+                            <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+                                站点概览
+                            </li>
+                        </ul>
+                        <section class="site-overview-wrap sidebar-panel">
+                            <div class="site-overview">
+                                <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <p class="site-author-name" itemprop="name">Velne Wang</p>
+                                    <p class="site-description motion-element" itemprop="description">Insist on not lazy.</p>
+                                </div>
+                                <nav class="site-state motion-element">
+                                    <div class="site-state-item site-state-posts">
+                                        <a href="/archives/%20%7C%7C%20archive">
+                                            <span class="site-state-item-count">50</span>
+                                            <span class="site-state-item-name">文章</span>
+                                        </a>
+                                    </div>
+                                    <div class="site-state-item site-state-categories">
+                                        <a href="/categories/index.html">
+                                            <span class="site-state-item-count">12</span>
+                                            <span class="site-state-item-name">分类</span>
+                                        </a>
+                                    </div>
+                                    <div class="site-state-item site-state-tags">
+                                        <a href="/tags/index.html">
+                                            <span class="site-state-item-count">65</span>
+                                            <span class="site-state-item-name">标签</span>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </div>
+                        </section>
+                        <!--noindex-->
+                        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+                            <div class="post-toc">
+                                <div class="post-toc-content">
+                                    <ol class="nav">
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Locations"><span class="nav-text">Locations</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Instance"><span class="nav-text">Instance</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Plugins-preferences"><span class="nav-text">Plugins preferences</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Support-pluginCustomization"><span class="nav-text">Support pluginCustomization</span></a></li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Font"><span class="nav-text">Font</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Colors-and-fonts"><span class="nav-text">Colors and fonts</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Line-delimiter"><span class="nav-text">Line delimiter</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#General-line-separator"><span class="nav-text">General line separator</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Character-set"><span class="nav-text">Character set</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#General-text-file-encoding"><span class="nav-text">General text file encoding</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Content-types-encoding"><span class="nav-text">Content types encoding</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Code-Style"><span class="nav-text">Code Style</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#General-editors-insert-spaces-for-tab"><span class="nav-text">General editors insert spaces for tab</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Java-formatter-indent-using-spaces-and-line-width"><span class="nav-text">Java formatter indent using spaces and line width</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#XML-formatting-indent-using-spaces-and-line-width"><span class="nav-text">XML formatting indent using spaces and line width</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Maven-setting"><span class="nav-text">Maven setting</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#User-settings-and-local-repository"><span class="nav-text">User settings and local repository</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-Boot"><span class="nav-text">Spring Boot</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Spring-Boot-Initializr"><span class="nav-text">Spring Boot Initializr</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Status-bar"><span class="nav-text">Status bar</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Show-heap-status"><span class="nav-text">Show heap status</span></a></li>
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Hide-Tip-of-the-Day"><span class="nav-text">Hide Tip of the Day</span></a></li>
+                                            </ol>
+                                        </li>
+                                        <li class="nav-item nav-level-2"><a class="nav-link" href="#Install-Update"><span class="nav-text">Install&#x2F;Update</span></a>
+                                            <ol class="nav-child">
+                                                <li class="nav-item nav-level-3"><a class="nav-link" href="#Automatic-Updates"><span class="nav-text">Automatic Updates</span></a></li>
+                                            </ol>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
+                        <!--/noindex-->
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer id="footer" class="footer">
+            <div class="footer-inner">
+                <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2020</span>
+                    <span class="with-love">
+                        <i class="fa fa-flask"></i>
+                    </span>
+                    <span class="author" itemprop="copyrightHolder">Velne Wang</span>
+                </div>
+                <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+                <span class="post-meta-divider">|</span>
+                <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/velnewang/hexo-theme-txen">TxeN</a> v5.1.4</div>
+            </div>
+        </footer>
+        <div class="back-to-top">
+            <i class="fa fa-arrow-up"></i>
+            <span id="scrollpercent"><span>0</span>%</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+            window.Promise = null;
+        }
+    </script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    <script type="text/javascript" src="/js/src/utils.min.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/motion.min.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+    <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+</body>
+
+</html>

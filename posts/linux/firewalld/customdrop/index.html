@@ -16,18 +16,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="Operations,Linux,Firewall,firewalld," />
-    <meta name="description" content="Linux firewalld 设置白名单 Zone，设置默认 target=&amp;quot;DROP&amp;quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
-    <meta name="keywords" content="Operations,Linux,Firewall,firewalld">
+    <meta name="description" content="Linux firewalld 设置白名单 Zone，设置默认 target&#x3D;&quot;DROP&quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Linux 防火墙白名单Zone">
     <meta property="og:url" content="https://knowte.velne.win/posts/linux/firewalld/customdrop/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="Linux firewalld 设置白名单 Zone，设置默认 target=&amp;quot;DROP&amp;quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2018-09-16T14:13:38.399Z">
+    <meta property="og:description" content="Linux firewalld 设置白名单 Zone，设置默认 target&#x3D;&quot;DROP&quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
+    <meta property="article:published_time" content="2018-09-14T16:00:00.000Z">
+    <meta property="article:modified_time" content="2018-09-16T14:13:38.399Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="Operations">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Firewall">
+    <meta property="article:tag" content="firewalld">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Linux 防火墙白名单Zone">
-    <meta name="twitter:description" content="Linux firewalld 设置白名单 Zone，设置默认 target=&amp;quot;DROP&amp;quot;，允许 ssh、http、https 等服务端口、协议或者自定端口等。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -72,6 +74,7 @@
     </script>
     <link rel="canonical" href="https://knowte.velne.win/posts/linux/firewalld/customdrop/" />
     <title>Linux 防火墙白名单Zone | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +104,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -186,7 +189,6 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    501
                                                 </span>
                                             </div>
                                         </div>
@@ -195,20 +197,19 @@
                                         <p>Linux <code>firewalld</code> 设置白名单 <code>Zone</code>，设置默认 <code>target=&quot;DROP&quot;</code>，允许 <code>ssh</code>、<code>http</code>、<code>https</code> 等服务端口、协议或者自定端口等。</p>
                                         <a id="more"></a>
                                         <h2 id="连通性测试"><a href="#连通性测试" class="headerlink" title="连通性测试"></a>连通性测试</h2>
-                                        <p>检测比如 <code>ICMP</code> 协议、<code>http</code> 服务等。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># ping -c4 &lt;server_domain_or_ip&gt;</span></span><br><span class="line">PING &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;) 56(84) bytes of data.</span><br><span class="line">64 bytes from &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;): icmp_seq=1 ttl=51 time=23 ms</span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># curl &lt;your_server_domain_or_ip&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>检测比如 <code>ICMP</code> 协议、<code>http</code> 服务等。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># ping -c4 &lt;server_domain_or_ip&gt;</span></span><br><span class="line">PING &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;) 56(84) bytes of data.</span><br><span class="line">64 bytes from &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;): icmp_seq=1 ttl=51 time=23 ms</span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># curl &lt;your_server_domain_or_ip&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h2 id="新建自定义区域ZONE"><a href="#新建自定义区域ZONE" class="headerlink" title="新建自定义区域ZONE"></a>新建自定义区域ZONE</h2>
                                         <figure class="highlight sh">
                                             <table>
@@ -262,63 +263,59 @@
                                                 </tr>
                                             </table>
                                         </figure>
-                                        <p>确保当前网卡已经分配到防火墙区域。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --get-zone-of-interface="ens32"</span></span><br><span class="line">customdrop</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --zone=customzoen--change-interface=&lt;interface&gt;</span></span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
-                                        <p>或者直接指定网卡所在防火墙区域，不指定则默认为激活区域。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># cat etc/sysconfig/network-scripts/ifcfg-&lt;interface&gt; | grep "ZONE="</span></span><br><span class="line">ZONE=customdrop</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>确保当前网卡已经分配到防火墙区域。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --get-zone-of-interface="ens32"</span></span><br><span class="line">customdrop</span><br><span class="line">[root@localhost ~]<span class="comment"># firewall-cmd --zone=customzoen--change-interface=&lt;interface&gt;</span></span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>或者直接指定网卡所在防火墙区域，不指定则默认为激活区域。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># cat etc/sysconfig/network-scripts/ifcfg-&lt;interface&gt; | grep "ZONE="</span></span><br><span class="line">ZONE=customdrop</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2>
-                                        <p>在区域规则生效后，已经无法 <code>ping</code> 通。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># ping -c4 &lt;server_domain_or_ip&gt;</span></span><br><span class="line">PING &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;) 56(84) bytes of data.</span><br><span class="line"></span><br><span class="line">--- host.velne.win ping statistics ---</span><br><span class="line">4 packets transmitted, 0 received, 100% packet loss, time 3002ms</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
-                                        <p>检查特定服务端口。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">[root@localhost ~]<span class="comment"># curl &lt;your_server_domain_or_ip&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>在区域规则生效后，已经无法 <code>ping</code> 通。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># ping -c4 &lt;server_domain_or_ip&gt;</span></span><br><span class="line">PING &lt;server_domain_or_ip&gt; (&lt;server_ip&gt;) 56(84) bytes of data.</span><br><span class="line"></span><br><span class="line">--- host.velne.win ping statistics ---</span><br><span class="line">4 packets transmitted, 0 received, 100% packet loss, time 3002ms</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
+                                        <p>检查特定服务端口。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">[root@localhost ~]<span class="comment"># curl &lt;your_server_domain_or_ip&gt;</span></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                     </div>
                                     <footer class="post-footer">
                                         <div class="post-tags">
@@ -373,20 +370,20 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>

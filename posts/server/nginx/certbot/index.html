@@ -16,18 +16,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/icon-16x16.png?v=5.1.4">
     <link rel="mask-icon" href="/images/icons/icon-512x512.svg?v=5.1.4" color="#222">
     <meta name="keywords" content="nginx," />
-    <meta name="description" content="网站使用Let&amp;#39;s Encrypt的免费证书，通过默认推荐的Certbot自动配置。">
-    <meta name="keywords" content="nginx">
+    <meta name="description" content="网站使用Let&#39;s Encrypt的免费证书，通过默认推荐的Certbot自动配置。">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Nginx 启用HTTPS">
     <meta property="og:url" content="https://knowte.velne.win/posts/server/nginx/certbot/index.html">
     <meta property="og:site_name" content="Knowte">
-    <meta property="og:description" content="网站使用Let&amp;#39;s Encrypt的免费证书，通过默认推荐的Certbot自动配置。">
-    <meta property="og:locale" content="zh-Hans">
-    <meta property="og:updated_time" content="2019-04-21T09:49:38.494Z">
+    <meta property="og:description" content="网站使用Let&#39;s Encrypt的免费证书，通过默认推荐的Certbot自动配置。">
+    <meta property="article:published_time" content="2019-04-17T16:00:00.000Z">
+    <meta property="article:modified_time" content="2019-04-21T09:49:38.494Z">
+    <meta property="article:author" content="Velne Wang">
+    <meta property="article:tag" content="nginx">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Nginx 启用HTTPS">
-    <meta name="twitter:description" content="网站使用Let&amp;#39;s Encrypt的免费证书，通过默认推荐的Certbot自动配置。">
     <script type="text/javascript" id="hexo.configurations">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -72,6 +71,7 @@
     </script>
     <link rel="canonical" href="https://knowte.velne.win/posts/server/nginx/certbot/" />
     <title>Nginx 启用HTTPS | Knowte</title>
+    <meta name="generator" content="Hexo 4.2.0">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -101,37 +101,37 @@
                 <nav class="site-nav">
                     <ul id="menu" class="menu">
                         <li class="menu-item menu-item-home">
-                            <a href="/" rel="section">
+                            <a href="/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
                                 首页
                             </a>
                         </li>
                         <li class="menu-item menu-item-categories">
-                            <a href="/categories/" rel="section">
+                            <a href="/categories/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
                                 分类
                             </a>
                         </li>
                         <li class="menu-item menu-item-archives">
-                            <a href="/archives/" rel="section">
+                            <a href="/archives/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
                                 归档
                             </a>
                         </li>
                         <li class="menu-item menu-item-tags">
-                            <a href="/tags/" rel="section">
+                            <a href="/tags/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
                                 标签
                             </a>
                         </li>
                         <li class="menu-item menu-item-about">
-                            <a href="/about/" rel="section">
+                            <a href="/about/%20" rel="section">
                                 <i class="menu-item-icon fa fa-fw fa-rocket"></i> <br />
                                 关于
                             </a>
                         </li>
                         <li class="menu-item menu-item-main">
-                            <a href="https://velne.win" rel="section">
+                            <a href="https://velne.win" target="_blank" rel="section noopener">
                                 <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
                                 主站
                             </a>
@@ -186,7 +186,6 @@
                                                 </span>
                                                 <span class="post-meta-item-text">字数统计&#58;</span>
                                                 <span title="字数统计">
-                                                    110
                                                 </span>
                                             </div>
                                         </div>
@@ -208,20 +207,19 @@
                                             </table>
                                         </figure>
                                         <h2 id="Get-Started"><a href="#Get-Started" class="headerlink" title="Get Started"></a>Get Started</h2>
-                                        <p>自动配置<code>nginx</code>。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">$ sudo certbot --nginx</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>自动配置<code>nginx</code>。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">$ sudo certbot --nginx</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <p>或者</p>
                                         <figure class="highlight sh">
                                             <table>
@@ -236,20 +234,19 @@
                                             </table>
                                         </figure>
                                         <h2 id="Automating-renewal"><a href="#Automating-renewal" class="headerlink" title="Automating renewal"></a>Automating renewal</h2>
-                                        <p>首先测试是否可以更新。<br>
-                                            <figure class="highlight sh">
-                                                <table>
-                                                    <tr>
-                                                        <td class="gutter">
-                                                            <pre><span class="line">1</span><br></pre>
-                                                        </td>
-                                                        <td class="code">
-                                                            <pre><span class="line">$ sudo certbot renew --dry-run</span><br></pre>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                            </figure>
-                                        </p>
+                                        <p>首先测试是否可以更新。</p>
+                                        <figure class="highlight sh">
+                                            <table>
+                                                <tr>
+                                                    <td class="gutter">
+                                                        <pre><span class="line">1</span><br></pre>
+                                                    </td>
+                                                    <td class="code">
+                                                        <pre><span class="line">$ sudo certbot renew --dry-run</span><br></pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </figure>
                                         <p>默认可以启用在<code>systemd</code>中的<code>certbot-renew.timer</code>自动更新定时器。</p>
                                         <p><a href="https://certbot.eff.org/lets-encrypt/debianstretch-nginx" target="_blank" rel="noopener">Certbot</a></p>
                                     </div>
@@ -303,20 +300,20 @@
                                 </div>
                                 <nav class="site-state motion-element">
                                     <div class="site-state-item site-state-posts">
-                                        <a href="/archives/">
+                                        <a href="/archives/%20%7C%7C%20archive">
                                             <span class="site-state-item-count">50</span>
                                             <span class="site-state-item-name">文章</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-categories">
                                         <a href="/categories/index.html">
-                                            <span class="site-state-item-count">10</span>
+                                            <span class="site-state-item-count">12</span>
                                             <span class="site-state-item-name">分类</span>
                                         </a>
                                     </div>
                                     <div class="site-state-item site-state-tags">
                                         <a href="/tags/index.html">
-                                            <span class="site-state-item-count">66</span>
+                                            <span class="site-state-item-count">65</span>
                                             <span class="site-state-item-name">标签</span>
                                         </a>
                                     </div>
